@@ -1,4 +1,4 @@
-from pyFiddle_Intermediate import *
+from pyFiddleIntermediate import *
 from imports import *
 import pytest
 
