@@ -1,44 +1,55 @@
 from imports import *
 
+
 # Take the base and Height of a triangle and return area size
 def rightTriangleArea(base: int, height: int) -> float:
-    return ((base * height) / 2)
+    return (base * height) / 2
+
 
 def cubes(num: int) -> int:
-    return (num ** 3)
+    return num**3
 
-#Takes the age in years, returns age in days
+
+# Takes the age in years, returns age in days
 def calc_age(age: int) -> int:
-    return (age * 365)
+    return age * 365
+
 
 # Convert hours to secounds
 def how_many_secounds(hours: int) -> int:
-    return (hours * 60 * 60)
+    return hours * 60 * 60
+
 
 # Win = 3 points, draw = 1 point, loss = 0 points
 def football_points(wins: int, draws: int, losses: int) -> int:
-    return ((wins * 3) + (draws * 1) + (losses * 0))
+    return (wins * 3) + (draws * 1) + (losses * 0)
+
 
 def get_first_value(values: list) -> int:
-    return (values[0])
+    return values[0]
+
 
 def animals(chickens: int, cows: int, pigs: int) -> int:
     chickenLegs = 2
     cowLegs = 4
     pigLegs = 4
-    return ((chickens * chickenLegs) + (cows * cowLegs) + (pigs * pigLegs))
+    return (chickens * chickenLegs) + (cows * cowLegs) + (pigs * pigLegs)
+
 
 def give_me_something(string: str) -> str:
-    return ("something " + string)
+    return "something " + string
+
 
 def points(twos: int, threes: int) -> int:
-    return ((threes * 3) + (twos * 2))
+    return (threes * 3) + (twos * 2)
+
 
 def greeting(name):
     if name == "Mubashir":
         return "Hello, my Love!"
     else:
         return "Hello, " + name + "!"
+
 
 def findLargestNum(values: list) -> int:
     largest = values[0]
@@ -47,20 +58,25 @@ def findLargestNum(values: list) -> int:
             largest = i
     return largest
 
+
 """validate email address as a string. Each must have
 - Start with one or more alphanumeric characters
 - contain an @symbol
 - Followed by one ore more alphanumeric characters
 - Followed by a period
 - Followed by two more more alphanumeric characters"""
+
+
 def validate_email_address(email: str) -> bool:
     if re.search("[a-zA-Z0-9]+@[a-zA-Z0-9]+[.][a-zA-Z0-9][a-zA-Z0-9]+", email) != None:
         return True
     return False
 
+
 # Given an integer, return the reult of that to the power of 2. Use a for loop with the Math Library
 def calculate_exponential_power(num: int) -> int:
-    return (num * num)
+    return num * num
+
 
 def extract_nth_element(list_of_tuples: tuple, n: int) -> list:
     """
@@ -78,6 +94,7 @@ def extract_nth_element(list_of_tuples: tuple, n: int) -> list:
         values.append(i[n])
     return values
 
+
 def extract_rear(test_tuple: tuple) -> list:
     """
     Extract the last character of each string in the given tuple.
@@ -94,6 +111,7 @@ def extract_rear(test_tuple: tuple) -> list:
         values.append(i[-1])
     return values
 
+
 def extract_values(text: str) -> list:
     """
     Extracts all values enclosed in double quotation marks from the input string.
@@ -105,10 +123,11 @@ def extract_values(text: str) -> list:
         list: A list of values found within double quotation marks.
     """
     # Implement the function logic here
-    values = re.findall("\"[a-zA-Z0-9]+\"", text)
+    values = re.findall('"[a-zA-Z0-9]+"', text)
     for i in range(len(values)):
         values[i] = values[i][1:-1]
     return values
+
 
 def extract_string(strings: list, length: int) -> list:
     """
@@ -127,6 +146,7 @@ def extract_string(strings: list, length: int) -> list:
         if len(i) == length:
             values.append(i)
     return values
+
 
 def filter_dict_by_value(data: dict, n: int) -> dict:
     """
@@ -147,6 +167,7 @@ def filter_dict_by_value(data: dict, n: int) -> dict:
             values.update({i[0]: i[1]})
     return values
 
+
 def filter_students(students, min_height, min_weight):
     """
     Filters students based on minimum height and weight.
@@ -160,10 +181,16 @@ def filter_students(students, min_height, min_weight):
         dict: A dictionary of students meeting the height and weight criteria.
     """
     # Initialize the result dictionary
-    return {key: value for key, value in students.items() if ((value[0]) >= min_height and (value[1]) >= min_weight)}
+    return {
+        key: value
+        for key, value in students.items()
+        if ((value[0]) >= min_height and (value[1]) >= min_weight)
+    }
+
 
 def find_dissimilar(tuple1: tuple, tuple2: tuple) -> tuple:
     return subDissimilar(tuple1, tuple2) + subDissimilar(tuple2, tuple1)
+
 
 def subDissimilar(tuple1: tuple, tuple2: tuple) -> tuple:
     values = ()
@@ -175,6 +202,7 @@ def subDissimilar(tuple1: tuple, tuple2: tuple) -> tuple:
         if valid:
             values = values + (i,)
     return values
+
 
 def find_adverb_position(text):
     """
@@ -197,6 +225,7 @@ def find_adverb_position(text):
         value = None
     return value
 
+
 def find_first_occurrence(A: list, x: int) -> int:
     """
     Find the index of the first occurrence of x in the sorted list A.
@@ -216,6 +245,7 @@ def find_first_occurrence(A: list, x: int) -> int:
         count += 1
     return -1
 
+
 def first_odd(nums):
     """
     Find the first odd number in the list.
@@ -231,6 +261,7 @@ def first_odd(nums):
         if i % 2 == 1:
             return i
     return -1
+
 
 def long_words(n: int, sentence: str) -> list:
     """
@@ -254,6 +285,7 @@ def long_words(n: int, sentence: str) -> list:
     # Add your implementation here
     return result
 
+
 def find_max_length_element(lst: list) -> list:
     """
     Find the sublist with the maximum length in a list of lists.
@@ -273,6 +305,7 @@ def find_max_length_element(lst: list) -> list:
             longest = len(i)
     return value
 
+
 def max_length(list_of_lists):
     """
     Find the longest list in a list of lists and return its length and the list itself.
@@ -286,6 +319,7 @@ def max_length(list_of_lists):
     # Placeholder for the solution
     value = find_max_length_element(list_of_lists)
     return (len(value), value)
+
 
 def max_val(listval):
     """
@@ -304,6 +338,7 @@ def max_val(listval):
             if i > largest:
                 largest = i
     return largest
+
 
 def max_length_list(input_list):
     """
@@ -324,6 +359,7 @@ def max_length_list(input_list):
             value = (largest, i)
     return value
 
+
 def min_val(listval):
     """
     Find the maximum integer value in a heterogeneous list.
@@ -342,6 +378,7 @@ def min_val(listval):
                 smallest = i
     return smallest
 
+
 def min_k(test_list, K):
     """
     Find the minimum K records from a list of tuples based on the second element of each tuple.
@@ -355,9 +392,10 @@ def min_k(test_list, K):
     """
     # Sort the list based on the second element of the tuples
     sorted_list = sorted(test_list, key=lambda x: x[1])
-    
+
     # Return the first K elements of the sorted list
     return sorted_list[:K]
+
 
 def find_min_length_sublist(lst):
     """
@@ -384,9 +422,9 @@ def index_minimum(tuples_list: List[Tuple[str, int]]) -> str:
     str: The first element of the tuple with the smallest second value.
     """
     # Your code here
-        # Find the tuple with the minimum second value
+    # Find the tuple with the minimum second value
     min_tuple = min(tuples_list, key=lambda x: x[1])
-    
+
     # Return the first element (string) of the tuple
     return min_tuple[0]
 
@@ -405,6 +443,7 @@ def find_n_largest(nums: List[int], n: int) -> List[int]:
     # Sort the list of nums
     lst = sorted(nums, reverse=True)
     return lst[:n]
+
 
 def perfect_squares(a: int, b: int) -> list:
     """
@@ -428,6 +467,7 @@ def perfect_squares(a: int, b: int) -> list:
         square = num * num
     return values
 
+
 def find_shared_elements(list1, list2):
     """
     Find the shared elements between two lists.
@@ -445,7 +485,8 @@ def find_shared_elements(list1, list2):
         if i in list2:
             values.append(i)
     return values
-            
+
+
 def find_hypotenuse(a: float, b: float) -> float:
     """
     Calculate the hypotenuse of a right-angled triangle given the other two sides.
@@ -483,6 +524,7 @@ def find_tuples(test_list, k):
             values.append(i)
     return values
 
+
 def find_words_starting_with_p(words):
     """
     Finds the first two words starting with 'P' from the first string in the list.
@@ -498,12 +540,13 @@ def find_words_starting_with_p(words):
         # Split the string into words
         word_list = string.split()
         # Filter words starting with 'P'
-        p_words = [word for word in word_list if word.startswith('P')]
+        p_words = [word for word in word_list if word.startswith("P")]
         # Check if there are at least two such words
         if len(p_words) >= 2:
             return (p_words[0], p_words[1])
     # Return None if no such pair is found
     return None
+
 
 def find_char_long(text: str) -> list:
     """
@@ -522,6 +565,7 @@ def find_char_long(text: str) -> list:
         if len(i) >= 4:
             values.append(i)
     return values
+
 
 def first_non_repeating_character(input_string):
     """
@@ -550,6 +594,7 @@ def first_non_repeating_character(input_string):
     # Return None if no non-repeating character is found
     return None
 
+
 def first_repeated_char(input_string):
     """
     Find the first repeated character in the given string.
@@ -570,6 +615,7 @@ def first_repeated_char(input_string):
         if char_count[char] > 1:
             return char
 
+
 def add_to_shopping_list(item, current_list=None):
     """
     Adds an item to the shopping list.
@@ -583,9 +629,10 @@ def add_to_shopping_list(item, current_list=None):
     """
     if current_list is None:
         current_list = []
-    
+
     current_list.append(item)
     return current_list
+
 
 def flatten_to_set(list_of_lists: list) -> set:
     """
@@ -605,6 +652,7 @@ def flatten_to_set(list_of_lists: list) -> set:
                 values.add(j)
     return values
 
+
 def flatten_list(nested_list: list) -> list:
     """
     Flattens a nested list into a single list.
@@ -619,12 +667,13 @@ def flatten_list(nested_list: list) -> list:
     values = []
     for i in nested_list:
         if type(i) == list:
-            temp = (flatten_list(i))
+            temp = flatten_list(i)
             for j in temp:
                 values.append(j)
         else:
             values.append(i)
     return values
+
 
 def frequency_lists(list_of_lists):
     """
@@ -640,13 +689,14 @@ def frequency_lists(list_of_lists):
     # Count the frequency of each element
     # Return the frequency dictionary
     lst = flatten_list(list_of_lists)
-    
+
     # Count the frequency of each element
     values = {}
     for i in lst:
         values[i] = values.get(i, 0) + 1  # Increment the frequency of each element
-    
+
     return values
+
 
 def combinations_with_repetition(lst: List[str], n: int) -> List[Tuple[str, ...]]:
     """
@@ -659,18 +709,22 @@ def combinations_with_repetition(lst: List[str], n: int) -> List[Tuple[str, ...]
     Returns:
         List[Tuple[str, ...]]: A list of tuples representing the combinations.
     """
+
     def generate_combinations(start: int, current_combination: List[str]):
         if len(current_combination) == n:
             result.append(tuple(current_combination))
             return
         for i in range(start, len(lst)):
             current_combination.append(lst[i])
-            generate_combinations(i, current_combination)  # allow repetition by not moving 'start'
+            generate_combinations(
+                i, current_combination
+            )  # allow repetition by not moving 'start'
             current_combination.pop()  # backtrack
 
     result = []
     generate_combinations(0, [])
     return result
+
 
 def geometric_sum(n: int) -> float:
     """
@@ -688,10 +742,11 @@ def geometric_sum(n: int) -> float:
     if n == 0:
         return 1
     elif n > 0:
-        return ((1 / (pow(2, n))) + geometric_sum(n-1))
+        return (1 / (pow(2, n))) + geometric_sum(n - 1)
     else:
         print("error, negative number provided")
         return -1
+
 
 def group_by(func, seq: List) -> dict:
     """
@@ -713,6 +768,7 @@ def group_by(func, seq: List) -> dict:
             result[key] = [item]
     return result
 
+
 def harmonic_sum(n: int) -> float:
     """
     Calculate the harmonic sum of the first n terms.
@@ -728,9 +784,10 @@ def harmonic_sum(n: int) -> float:
     if n == 1:
         return 1
     elif n > 1:
-        return (harmonic_sum(n-1) + (1/n))
+        return harmonic_sum(n - 1) + (1 / n)
     else:
         print("invalid input provided")
+
 
 def heap_sort(iterable):
     """
@@ -744,13 +801,14 @@ def heap_sort(iterable):
     """
     # Create a heap from the iterable (in-place)
     hq.heapify(iterable)
-    
+
     # Extract the elements from the heap, which will be in sorted order
     sorted_list = []
     while iterable:
         sorted_list.append(hq.heappop(iterable))
-    
+
     return sorted_list
+
 
 def highest_power_of_2(n):
     """
@@ -768,6 +826,7 @@ def highest_power_of_2(n):
     # Bit manipulation: find the highest power of 2 <= n
     return 1 << (n.bit_length() - 1)
 
+
 def is_not_prime(n: int) -> bool:
     """
     Determine if a number is not a prime number.
@@ -782,9 +841,10 @@ def is_not_prime(n: int) -> bool:
     if n == 1:
         return True
     for i in range(2, n):
-        if n%i == 0:
+        if n % i == 0:
             return True
     return False
+
 
 def add_nested_tuples(tuple1, tuple2):
     """
@@ -803,6 +863,7 @@ def add_nested_tuples(tuple1, tuple2):
         for inner1, inner2 in zip(tuple1, tuple2)
     )
 
+
 def insert_element(lst: list, element: any) -> list:
     """
     Inserts the given element before each element in the list.
@@ -820,6 +881,7 @@ def insert_element(lst: list, element: any) -> list:
         values.append(element)
         values.append(i)
     return values
+
 
 def interleave_lists(list1: list, list2: list, list3: list) -> list:
     """
@@ -841,6 +903,7 @@ def interleave_lists(list1: list, list2: list, list3: list) -> list:
         values.append(list3[i])
     return values
 
+
 def jacobsthal_num(n):
     """
     Calculate the nth Jacobsthal number.
@@ -857,7 +920,8 @@ def jacobsthal_num(n):
     elif n == 1:
         return 1
     elif n >= 2:
-        return (jacobsthal_num(n - 1) + (2 * jacobsthal_num(n - 2)))
+        return jacobsthal_num(n - 1) + (2 * jacobsthal_num(n - 2))
+
 
 def join_integers(numbers: list) -> int:
     """
@@ -875,6 +939,7 @@ def join_integers(numbers: list) -> int:
         value = value + str(i)
     return int(value)
 
+
 def kth_element(arr: list, k: int) -> int:
     """
     Find the kth smallest element in the array using 1-based indexing.
@@ -888,7 +953,8 @@ def kth_element(arr: list, k: int) -> int:
     """
     # Sort the array in ascending order
     # Return the element at the (k-1)th index
-    return sorted(arr)[k-1]
+    return sorted(arr)[k - 1]
+
 
 def largest_negative(numbers: list) -> int:
     """
@@ -904,11 +970,12 @@ def largest_negative(numbers: list) -> int:
     value = None
     for i in numbers:
         if i < 0:
-            if value == None: 
+            if value == None:
                 value = i
             elif i > value:
                 value = i
     return value
+
 
 def find_largest_number(digits: list) -> int:
     """
@@ -923,6 +990,7 @@ def find_largest_number(digits: list) -> int:
     # Sort the digits in descending order
     # Combine the sorted digits into a single number
     return join_integers(sorted(digits, reverse=True))
+
 
 def large_product(nums1, nums2, N):
     """
@@ -941,7 +1009,8 @@ def large_product(nums1, nums2, N):
     for i in nums1:
         for j in nums2:
             bigNums.append(i * j)
-    return (sorted(bigNums, reverse=True)[:N])
+    return sorted(bigNums, reverse=True)[:N]
+
 
 def largest_triangle_area(radius: float) -> float:
     """
@@ -954,7 +1023,8 @@ def largest_triangle_area(radius: float) -> float:
     float: The area of the largest inscribed triangle.
     """
     # Placeholder for the solution
-    return (0.5 * radius * radius)
+    return 0.5 * radius * radius
+
 
 def last_digit_factorial(n: int) -> int:
     """
@@ -967,7 +1037,8 @@ def last_digit_factorial(n: int) -> int:
     int: The last digit of the factorial of n.
     """
     # Placeholder for the solution
-    return math.factorial(n)%10
+    return math.factorial(n) % 10
+
 
 def last_position(arr: list, x: int) -> int:
     """
@@ -987,6 +1058,7 @@ def last_position(arr: list, x: int) -> int:
             pos = i
     return pos
 
+
 def lateral_surface_area_cone(r: float, h: float) -> float:
     """
     Calculate the lateral surface area of a cone given its radius and height.
@@ -1004,6 +1076,7 @@ def lateral_surface_area_cone(r: float, h: float) -> float:
     slantHeight = math.sqrt(pow(r, 2) + pow(h, 2))
     return math.pi * r * slantHeight
 
+
 def lateral_surface_area_cylinder(radius: float, height: float) -> float:
     """
     Calculate the lateral surface area of a cylinder.
@@ -1016,7 +1089,8 @@ def lateral_surface_area_cylinder(radius: float, height: float) -> float:
         float: The lateral surface area of the cylinder.
     """
     # Placeholder for the solution
-    return (2 * math.pi * radius * height)
+    return 2 * math.pi * radius * height
+
 
 def left_insertion(a: list, x: any) -> int:
     """
@@ -1037,6 +1111,7 @@ def left_insertion(a: list, x: any) -> int:
             return i
     return len(a)
 
+
 def combine_lists(list1: list, list2: list) -> list:
     """
     Combines two lists by summing corresponding elements.
@@ -1051,6 +1126,7 @@ def combine_lists(list1: list, list2: list) -> list:
     # TODO: Implement the combine_lists function
     return [a + b for a, b in zip(list1, list2)]
 
+
 def find_common_elements(list1, list2):
     """
     Finds the common elements between two lists.
@@ -1064,6 +1140,7 @@ def find_common_elements(list1, list2):
     """
     # TODO: Implement the find_common_elements function
     return list(set(list1) & set(list2))
+
 
 def list_difference(list1: list, list2: list) -> list:
     """
@@ -1084,6 +1161,7 @@ def list_difference(list1: list, list2: list) -> list:
             values.remove(i)
     return values
 
+
 def filter_positive_numbers(numbers: list) -> list:
     """
     Filters a list to include only the positive numbers.
@@ -1096,6 +1174,7 @@ def filter_positive_numbers(numbers: list) -> list:
     """
     # TODO: Implement the filter_positive_numbers function
     return [a for a in numbers if a > 0]
+
 
 def filter_lists(func, lst: list) -> list:
     """
@@ -1111,6 +1190,7 @@ def filter_lists(func, lst: list) -> list:
     # TODO: Implement the filter_lists function
     return [a for a in lst if func(a)]
 
+
 def map_lists(func, lst):
     """
     Applies a function to each element in a list and returns a new list containing the results.
@@ -1124,6 +1204,7 @@ def map_lists(func, lst):
     """
     # TODO: Implement the map_lists function
     return [func(a) for a in lst]
+
 
 def reduce_lists(func, lst):
     """
@@ -1142,6 +1223,7 @@ def reduce_lists(func, lst):
         value = func(value, lst.pop(0))
     return value
 
+
 def sort_students(students: list) -> list:
     """
     Sorts the given list of student dictionaries in ascending order based on their age.
@@ -1155,6 +1237,7 @@ def sort_students(students: list) -> list:
     # TODO: Implement the sort_students function
     return sorted(students, key=lambda student: student["age"])
 
+
 def square_even_numbers(numbers: list) -> list:
     """
     Creates a new list containing the squares of the even numbers in the input list.
@@ -1166,7 +1249,8 @@ def square_even_numbers(numbers: list) -> list:
         list: A new list with the squared even numbers.
     """
     # TODO: Implement the square_even_numbers function
-    return [pow(a, 2) for a in numbers if (a%2 == 0)]
+    return [pow(a, 2) for a in numbers if (a % 2 == 0)]
+
 
 def find_max_length(lst: list) -> int:
     """
@@ -1181,8 +1265,10 @@ def find_max_length(lst: list) -> int:
     # Implement the function logic here
     mlen = 0
     for i in lst:
-        if len(i) > mlen: mlen = len(i)
+        if len(i) > mlen:
+            mlen = len(i)
     return mlen
+
 
 def len_longest_word(words: list) -> int:
     """
@@ -1197,8 +1283,10 @@ def len_longest_word(words: list) -> int:
     # Placeholder for the solution
     mlen = 0
     for i in words:
-        if len(i) > mlen: mlen = len(i)
+        if len(i) > mlen:
+            mlen = len(i)
     return mlen
+
 
 def is_magic_square(matrix: list[list[int]]) -> bool:
     """
@@ -1214,21 +1302,21 @@ def is_magic_square(matrix: list[list[int]]) -> bool:
     n = len(matrix)
     if n == 0 or any(len(row) != n for row in matrix):
         return False
-    
+
     # Calculate the reference sum from the first row
     reference_sum = sum(matrix[0])
-    
+
     # Check if the sum of each row is equal to the reference sum
     for row in matrix:
         if sum(row) != reference_sum:
             return False
-    
+
     # Check if the sum of each column is equal to the reference sum
     for col in range(n):
         column_sum = sum(matrix[row][col] for row in range(n))
         if column_sum != reference_sum:
             return False
-    
+
     # Check the main diagonal
     main_diag_sum = sum(matrix[i][i] for i in range(n))
     if main_diag_sum != reference_sum:
@@ -1242,6 +1330,7 @@ def is_magic_square(matrix: list[list[int]]) -> bool:
     # If all checks passed, it's a magic square
     return True
 
+
 def match_a_followed_by_b(text):
     """
     Check if the input string contains an 'a' followed by one or more 'b's.
@@ -1253,8 +1342,9 @@ def match_a_followed_by_b(text):
         bool: True if the pattern is found, False otherwise.
     """
     # Define the regular expression pattern
-    pattern = 'ab' 
+    pattern = "ab"
     return bool(re.search(pattern, text))
+
 
 def text_match_wordz(text):
     """
@@ -1267,11 +1357,12 @@ def text_match_wordz(text):
         bool: True if a word with 'z' is found, False otherwise.
     """
     # TODO: Implement this function
-    fil = '[zZ]'
+    fil = "[zZ]"
     if re.search(fil, text) != None:
         return True
     else:
         return False
+
 
 def max_product_tuple(list_of_tuples: list) -> int:
     """
@@ -1286,6 +1377,7 @@ def max_product_tuple(list_of_tuples: list) -> int:
     # Placeholder for the solution
     return max(abs(x[0] * x[1]) for x in list_of_tuples)
 
+
 def max_aggregate(stdata: list) -> tuple:
     """
     Calculate the maximum aggregate score from a list of tuples.
@@ -1298,7 +1390,7 @@ def max_aggregate(stdata: list) -> tuple:
     """
     # Placeholder for the solution
     dic = {}
-    
+
     # Aggregate the scores for each name
     for name, score in stdata:
         dic[name] = dic.get(name, 0) + score
@@ -1308,6 +1400,7 @@ def max_aggregate(stdata: list) -> tuple:
     max_score = dic[max_name]
 
     return (max_name, max_score)
+
 
 def max_sub_array_sum(arr: list) -> int:
     """
@@ -1334,6 +1427,7 @@ def max_sub_array_sum(arr: list) -> int:
         currentSum = 0
     return maxSum
 
+
 def find_max_difference(binary_string: str) -> int:
     """
     Calculate the maximum difference between the number of 0s and 1s in any substring.
@@ -1349,13 +1443,17 @@ def find_max_difference(binary_string: str) -> int:
         return 0
 
     # Initialize variables for Kadane's algorithm
-    max_diff = 0  # We start from 0, as the best case when no difference can be negative is 0
-    current_diff = 0  # This will store the current difference as we iterate through the string
+    max_diff = (
+        0  # We start from 0, as the best case when no difference can be negative is 0
+    )
+    current_diff = (
+        0  # This will store the current difference as we iterate through the string
+    )
 
     # Traverse through the binary string
     for char in binary_string:
         # Update the difference: +1 for '0', -1 for '1'
-        current_diff += 1 if char == '0' else -1
+        current_diff += 1 if char == "0" else -1
 
         # Update the max_diff with the largest difference encountered
         max_diff = max(max_diff, current_diff)
@@ -1365,6 +1463,7 @@ def find_max_difference(binary_string: str) -> int:
             current_diff = 0
 
     return max_diff
+
 
 def max_difference(tuple_list):
     """
@@ -1379,9 +1478,11 @@ def max_difference(tuple_list):
     # Placeholder for the solution
     maxNum = 0
     for i in tuple_list:
-        difference = abs(i[0] - i[1]) 
-        if (difference) > maxNum: maxNum = difference
+        difference = abs(i[0] - i[1])
+        if (difference) > maxNum:
+            maxNum = difference
     return maxNum
+
 
 def max_occurrences(nums):
     """
@@ -1403,10 +1504,11 @@ def max_occurrences(nums):
     # Placeholder for the solution
     if not nums:
         return None
-    
+
     max_freq_num = max(frequency, key=frequency.get)
     return max_freq_num
-    
+
+
 def max_of_nth(matrix: list, n: int) -> int:
     """
     Returns the maximum value in the nth column of the given matrix.
@@ -1421,8 +1523,10 @@ def max_of_nth(matrix: list, n: int) -> int:
     # Placeholder for the solution
     maxNum = 0
     for i in matrix:
-        if i[n] > maxNum: maxNum = i[n]
+        if i[n] > maxNum:
+            maxNum = i[n]
     return maxNum
+
 
 def max_product_pair(arr: list) -> tuple:
     """
@@ -1444,8 +1548,11 @@ def max_product_pair(arr: list) -> tuple:
     prod1 = arr[0] * arr[1]
     prod2 = arr[-1] * arr[-2]
 
-    if (prod1 > prod2): return (arr[1], arr[0])
-    else: return (arr[-2], arr[-1])
+    if prod1 > prod2:
+        return (arr[1], arr[0])
+    else:
+        return (arr[-2], arr[-1])
+
 
 def max_sum_list(lists: list) -> list:
     """
@@ -1461,10 +1568,11 @@ def max_sum_list(lists: list) -> list:
     maxsum = sum(lists[0])
     maxList = lists[0]
     for i in lists:
-        if sum(i) > maxsum: 
+        if sum(i) > maxsum:
             maxsum = sum(i)
             maxList = i
     return maxList
+
 
 def max_run_uppercase(test_str):
     """
@@ -1478,7 +1586,8 @@ def max_run_uppercase(test_str):
     """
     # Initialize variables to track the current and maximum runs
     # Placeholder for the solution
-    return (len(max(re.findall("[A-Z]*", test_str), key=lambda x: len(x))))
+    return len(max(re.findall("[A-Z]*", test_str), key=lambda x: len(x)))
+
 
 def maximize_elements(tuple1: tuple, tuple2: tuple) -> tuple:
     """
@@ -1494,11 +1603,14 @@ def maximize_elements(tuple1: tuple, tuple2: tuple) -> tuple:
     """
     # Initialize the result tuple
     result = tuple(
-        tuple(max(a, b) for a, b in zip(t1, t2))  # Find element-wise max for each pair of inner tuples
+        tuple(
+            max(a, b) for a, b in zip(t1, t2)
+        )  # Find element-wise max for each pair of inner tuples
         for t1, t2 in zip(tuple1, tuple2)
     )
-    
+
     return result
+
 
 def max_abs_diff(arr):
     """
@@ -1513,6 +1625,7 @@ def max_abs_diff(arr):
     # Placeholder for the solution
     arr.sort()
     return abs(arr[0] - arr[-1])
+
 
 def merge_dictionaries_three(dict1, dict2, dict3):
     """
@@ -1529,12 +1642,16 @@ def merge_dictionaries_three(dict1, dict2, dict3):
     # Placeholder for the solution
     return {**dict1, **dict2, **dict3}
 
+
 def combineLists(a: list, b: list) -> list:
     for i in b:
         a.append(i)
     return a
 
-def merge_sorted_lists(list1: List[int], list2: List[int], list3: List[int]) -> List[int]:
+
+def merge_sorted_lists(
+    list1: List[int], list2: List[int], list3: List[int]
+) -> List[int]:
     """
     Merge three lists into a single sorted list.
 
@@ -1551,6 +1668,7 @@ def merge_sorted_lists(list1: List[int], list2: List[int], list3: List[int]) -> 
     value = combineLists(value, list3)
     return sorted(value)
 
+
 def min_swaps(str1: str, str2: str) -> int:
     """
     Calculate the minimum number of swaps required to convert one binary string to another.
@@ -1565,24 +1683,25 @@ def min_swaps(str1: str, str2: str) -> int:
     # If the lengths of the two strings are different, return "Not Possible"
     if len(str1) != len(str2):
         return "Not Possible"
-    
+
     # Initialize counters for mismatched '1's and '0's
     ones_in_str1 = ones_in_str2 = 0
     zeros_in_str1 = zeros_in_str2 = 0
-    
+
     # Count the number of mismatches between '1' and '0' in both strings
     for a, b in zip(str1, str2):
-        if a == '1' and b == '0':
+        if a == "1" and b == "0":
             ones_in_str1 += 1
-        elif a == '0' and b == '1':
+        elif a == "0" and b == "1":
             ones_in_str2 += 1
-    
+
     # If the mismatches of '1' and '0' are not equal, it's not possible to convert
     if ones_in_str1 != ones_in_str2:
         return "Not Possible"
-    
+
     # The minimum swaps needed is equal to the number of mismatches
     return ones_in_str1
+
 
 def find_min_diff(arr: list) -> int:
     """
@@ -1599,9 +1718,11 @@ def find_min_diff(arr: list) -> int:
     # Iterate through the sorted array to find the minimum difference
     arr.sort()
     minDistance = arr[-1] - arr[0]
-    for i in range(0, len(arr)-1):
-        if minDistance > arr[i+1] - arr[i]: minDistance = arr[i+1] - arr[i]
+    for i in range(0, len(arr) - 1):
+        if minDistance > arr[i + 1] - arr[i]:
+            minDistance = arr[i + 1] - arr[i]
     return minDistance
+
 
 def min_jumps(steps: Tuple[int, int], d: int) -> int:
     """
@@ -1615,29 +1736,33 @@ def min_jumps(steps: Tuple[int, int], d: int) -> int:
     int: The minimum number of jumps required, or -1 if it is not possible.
     """
     step1, step2 = sorted(steps, reverse=True)  # Ensure step1 is the larger step
-    
+
     # Try different combinations of jumps of step1 and step2
-    min_jumps_required = float('inf')  # Start with an infinite number of jumps
-    
+    min_jumps_required = float("inf")  # Start with an infinite number of jumps
+
     for i in range(d // step1 + 1):  # Try from 0 to max possible jumps of step1
-        remaining_distance = d - i * step1  # Remaining distance after taking i jumps of step1
-        
+        remaining_distance = (
+            d - i * step1
+        )  # Remaining distance after taking i jumps of step1
+
         # If remaining distance can be exactly divided by step2, it's a valid combination
         if remaining_distance % step2 == 0:
             # Calculate total jumps: i jumps of step1 + the number of jumps of step2
             total_jumps = i + (remaining_distance // step2)
             # Update the minimum jumps if this combination is better
             min_jumps_required = min(min_jumps_required, total_jumps)
-    
+
     # If no valid combination is found, return -1 (not possible)
-    return min_jumps_required if min_jumps_required != float('inf') else -1
+    return min_jumps_required if min_jumps_required != float("inf") else -1
+
 
 def mul(iterable):
     prod = iterable[0]
     for i in iterable[1:]:
         prod = prod * i
     return prod
- 
+
+
 def min_product_tuple(list_of_tuples):
     """
     Calculate the minimum product from pairs of tuples in a list.
@@ -1651,8 +1776,10 @@ def min_product_tuple(list_of_tuples):
     # Placeholder for the solution
     smallest = mul(list_of_tuples[0])
     for i in list_of_tuples:
-        if mul(i) < smallest: smallest = mul(i)
+        if mul(i) < smallest:
+            smallest = mul(i)
     return smallest
+
 
 def find_rotations(s: str) -> int:
     """
@@ -1666,18 +1793,19 @@ def find_rotations(s: str) -> int:
     """
     # Length of the string
     n = len(s)
-    
+
     # Loop through all possible rotations
     for i in range(1, n + 1):
         # Rotate the string by moving the first i characters to the end
         rotated = s[i:] + s[:i]
-        
+
         # Check if the rotated string is the same as the original
         if rotated == s:
             return i
-    
+
     # If no rotation matches, it means the string never returns to its original form
     return n
+
 
 def move_numbers_to_end(s: str) -> str:
     """
@@ -1704,7 +1832,8 @@ def move_numbers_to_end(s: str) -> str:
             non_numeric.append(char)
 
     # Combine non-numeric and numeric characters
-    return ''.join(non_numeric) + ''.join(numeric)
+    return "".join(non_numeric) + "".join(numeric)
+
 
 def move_zeroes_to_end(lst: list) -> list:
     """
@@ -1727,6 +1856,7 @@ def move_zeroes_to_end(lst: list) -> list:
         zeros -= 1
     return lst
 
+
 def multiply_and_divide(numbers):
     """
     Multiplies all numbers in the list and divides the result by the length of the list.
@@ -1746,6 +1876,7 @@ def multiply_and_divide(numbers):
     result = total_product / len(numbers)
     return result
 
+
 def multiply_list_by_index(numbers: list) -> list:
     """
     Multiplies each element in the given list by its index.
@@ -1761,6 +1892,7 @@ def multiply_list_by_index(numbers: list) -> list:
         numbers[i] = numbers[i] * i
     return numbers
 
+
 def n_largest_items(lst: List[int], n: int) -> List[int]:
     """
     Returns the n largest items from the list in descending order.
@@ -1775,6 +1907,7 @@ def n_largest_items(lst: List[int], n: int) -> List[int]:
     # Placeholder for the solution
     lst.sort(reverse=True)
     return lst[:n]
+
 
 def newman_conway(n: int) -> int:
     """
@@ -1792,18 +1925,19 @@ def newman_conway(n: int) -> int:
 
     # Recursive case
     # Placeholder for the actual implementation
-     # Recursive case: P(n) = P(P(n-1)) + P(n - P(n-1))
+    # Recursive case: P(n) = P(P(n-1)) + P(n - P(n-1))
     p = [0] * (n + 1)  # Initialize a list to store computed values (1-indexed)
-    
+
     # Base values
     p[1] = 1
     p[2] = 1
-    
+
     # Compute values from 3 to n
     for i in range(3, n + 1):
-        p[i] = p[p[i-1]] + p[i - p[i-1]]
-    
+        p[i] = p[p[i - 1]] + p[i - p[i - 1]]
+
     return p[n]
+
 
 def next_perfect_square(n: int) -> int:
     """
@@ -1823,36 +1957,39 @@ def next_perfect_square(n: int) -> int:
         perfectSquare = count * count
     return perfectSquare
 
+
 def next_smallest_palindrome(num: int) -> int:
     """
     Find the next smallest palindrome greater than the given number.
-    
+
     Args:
         num (int): The input number.
-    
+
     Returns:
         int: The next smallest palindrome.
     """
+
     # A helper function to check if a number is a palindrome
     def is_palindrome(n: int) -> bool:
         return str(n) == str(n)[::-1]
-    
+
     # Start from the next number
     num += 1
-    
+
     # Keep incrementing until a palindrome is found
     while not is_palindrome(num):
         num += 1
-    
+
     return num
+
 
 def catalan_number(n: int) -> int:
     """
     Compute the nth Catalan number using recursion.
-    
+
     Args:
         n (int): The index of the Catalan number to compute.
-    
+
     Returns:
         int: The nth Catalan number.
     """
@@ -1864,8 +2001,9 @@ def catalan_number(n: int) -> int:
     result = 0
     for i in range(n):
         result += catalan_number(i) * catalan_number(n - i - 1)
-    
+
     return result
+
 
 def centered_hexagonal_number(n: int) -> int:
     """
@@ -1878,7 +2016,8 @@ def centered_hexagonal_number(n: int) -> int:
         int: The nth centered hexagonal number.
     """
     # Implement the formula for centered hexagonal numbers
-    return (3 * n * (n-1) + 1)
+    return 3 * n * (n - 1) + 1
+
 
 def nth_decagonal_number(n):
     """
@@ -1891,7 +2030,8 @@ def nth_decagonal_number(n):
         int: The nth decagonal number.
     """
     # Implement the formula for the nth decagonal number
-    return (4 * pow(n, 2) - 3 * n)
+    return 4 * pow(n, 2) - 3 * n
+
 
 def hexagonal_num(n: int) -> int:
     """
@@ -1904,7 +2044,8 @@ def hexagonal_num(n: int) -> int:
         int: The nth hexagonal number.
     """
     # Implement the formula for the nth hexagonal number
-    return (n * ((2 * n) - 1))
+    return n * ((2 * n) - 1)
+
 
 def find_lucas(n: int) -> int:
     """
@@ -1923,6 +2064,7 @@ def find_lucas(n: int) -> int:
         sequence.append(sequence[-1] + sequence[-2])
     return sequence[n]
 
+
 def nth_octagonal_number(n: int) -> int:
     """
     Calculate the nth octagonal number.
@@ -1934,7 +2076,8 @@ def nth_octagonal_number(n: int) -> int:
     int: The nth octagonal number.
     """
     # Implement the formula for the nth octagonal number
-    return (3 * pow(n, 2) - 2 * n)
+    return 3 * pow(n, 2) - 2 * n
+
 
 def nth_power(nums: list, n: int) -> list:
     """
@@ -1950,6 +2093,7 @@ def nth_power(nums: list, n: int) -> list:
     # Replace the following line with your implementation
     return [pow(x, n) for x in nums]
 
+
 def find_star_num(n: int) -> int:
     """
     Calculate the N'th star number.
@@ -1961,7 +2105,8 @@ def find_star_num(n: int) -> int:
         int: The N'th star number.
     """
     # Implement the formula for the N'th star number
-    return (6 * n * (n-1) + 1)
+    return 6 * n * (n - 1) + 1
+
 
 def tetrahedral_number(n: int) -> int:
     """
@@ -1974,15 +2119,16 @@ def tetrahedral_number(n: int) -> int:
         int: The nth tetrahedral number.
     """
     # Implement the formula for the nth tetrahedral number
-    return ((n * (n+1) * (n+2)) / 6)
+    return (n * (n + 1) * (n + 2)) / 6
+
 
 def pack_consecutive_duplicates(input_list: list) -> list:
     """
     Groups consecutive duplicate elements in the input list into sublists.
-    
+
     Args:
         input_list (list): The list of elements to process.
-    
+
     Returns:
         list: A list of sublists, where each sublist contains consecutive duplicates.
     """
@@ -1992,7 +2138,7 @@ def pack_consecutive_duplicates(input_list: list) -> list:
     # Initialize the result list and a temporary sublist
     result = []
     current_sublist = [input_list[0]]
-    
+
     # Loop through the input list starting from the second element
     for i in range(1, len(input_list)):
         if input_list[i] == input_list[i - 1]:
@@ -2002,11 +2148,12 @@ def pack_consecutive_duplicates(input_list: list) -> list:
             # If different, add the current sublist to the result and start a new sublist
             result.append(current_sublist)
             current_sublist = [input_list[i]]
-    
+
     # Add the last sublist after the loop
     result.append(current_sublist)
-    
+
     return result
+
 
 def add_pairwise(test_tup: tuple) -> tuple:
     """
@@ -2020,55 +2167,58 @@ def add_pairwise(test_tup: tuple) -> tuple:
     """
     # Placeholder for the solution
     pairwise_sums = []
-    
+
     # Iterate through the tuple to compute the pairwise sums
     for i in range(len(test_tup) - 1):
         pairwise_sums.append(test_tup[i] + test_tup[i + 1])
-    
+
     # Return the result as a tuple
     return tuple(pairwise_sums)
+
 
 def flip(nums, k):
     """
     Reverses the first k elements of the list.
-    
+
     Args:
         nums (list): The list of integers.
         k (int): The index up to which to flip (1-based).
-    
+
     Returns:
         list: The list after flipping the first k elements.
     """
     nums[:k] = nums[:k][::-1]
     return nums
 
+
 def pancake_sort(nums):
     """
     Sorts a list of integers using the pancake sorting algorithm.
-    
+
     Args:
         nums (list): A list of integers to be sorted.
-    
+
     Returns:
         list: A sorted list of integers in ascending order.
     """
     n = len(nums)
-    
+
     # Perform the pancake sort
     for size in range(n, 1, -1):
         # Find the index of the maximum element in the unsorted portion
         max_idx = nums.index(max(nums[:size]))
-        
+
         # If the max element is not already in the correct position
         if max_idx != size - 1:
             # Flip the max element to the front if it's not already at the front
             if max_idx != 0:
                 flip(nums, max_idx + 1)
-            
+
             # Flip the max element to its correct position
             flip(nums, size)
-    
+
     return nums
+
 
 def partition(n, step, seq):
     """
@@ -2085,10 +2235,11 @@ def partition(n, step, seq):
     # TODO: Implement the partition function
     values = []
     start = 0
-    while start+n <= len(seq):
-        values.append(seq[start:start+n])
+    while start + n <= len(seq):
+        values.append(seq[start : start + n])
         start += step
     return values
+
 
 def extract_phone_numbers(str) -> list:
     """
@@ -2119,11 +2270,12 @@ def polar_to_rectangular(r, theta):
     # Calculate x and y using trigonometric functions
     x = r * math.cos(theta)
     y = r * math.sin(theta)
-    
+
     x = round(x, 2)
     y = round(y, 2)
 
     return (x, y)
+
 
 def positive_ratio(nums: list) -> float:
     """
@@ -2140,7 +2292,8 @@ def positive_ratio(nums: list) -> float:
     for i in nums:
         if i > 0:
             pos += 1
-    return round(pos/len(nums), 2)
+    return round(pos / len(nums), 2)
+
 
 def mul_even_odd(numbers: list) -> int:
     """
@@ -2168,6 +2321,7 @@ def mul_even_odd(numbers: list) -> int:
         value = firstEven * firstOdd
     return value
 
+
 def calculate_product(numbers):
     """
     Calculates the product of all elements in the given list.
@@ -2184,6 +2338,7 @@ def calculate_product(numbers):
         value = value * x
     return value
 
+
 def re_arrange_array(arr, n):
     """
     Re-arranges the first n elements of the array so that all negative elements
@@ -2198,7 +2353,7 @@ def re_arrange_array(arr, n):
     """
     temp_negatives = []
     positives = []
-    
+
     # Separate the first n elements into negatives and positives
     for i in range(n):
         if arr[i] < 0:
@@ -2210,6 +2365,7 @@ def re_arrange_array(arr, n):
     arr[:n] = temp_negatives + positives
 
     return arr
+
 
 def multiply_int(x: int, y: int) -> int:
     """
@@ -2225,12 +2381,12 @@ def multiply_int(x: int, y: int) -> int:
     # Base cases and recursive logic to be implemented
     if y == 0:
         return 0
-    
+
     elif y > 0:
-        return x + multiply_int(x, y-1)
+        return x + multiply_int(x, y - 1)
     elif y < 0:
-        return -x + multiply_int(x, y+1)
-    
+        return -x + multiply_int(x, y + 1)
+
 
 def find_literals(text: str, pattern: str) -> tuple:
     """
@@ -2245,13 +2401,18 @@ def find_literals(text: str, pattern: str) -> tuple:
     """
     # Perform regex search
     matches = re.search(pattern, text)
-    
+
     # If there's no match, return None
     if matches is None:
         return None
-    
+
     # Return the matching substring and its start and end indices
-    return (text[matches.span()[0]:matches.span()[1]], matches.span()[0], matches.span()[1])
+    return (
+        text[matches.span()[0] : matches.span()[1]],
+        matches.span()[0],
+        matches.span()[1],
+    )
+
 
 def area_polygon(sides: int, length: float) -> float:
     """
@@ -2265,7 +2426,8 @@ def area_polygon(sides: int, length: float) -> float:
         float: The area of the polygon.
     """
     # Placeholder for the solution
-    return ((sides * math.pow(length, 2)) / (4 * math.tan(math.pi / sides)))
+    return (sides * math.pow(length, 2)) / (4 * math.tan(math.pi / sides))
+
 
 def remove_dirty_chars(string1: str, string2: str) -> str:
     """
@@ -2278,7 +2440,8 @@ def remove_dirty_chars(string1: str, string2: str) -> str:
     Returns:
         str: The modified string after removing characters.
     """
-    return ''.join([char for char in string1 if char not in string2])
+    return "".join([char for char in string1 if char not in string2])
+
 
 def consecutive_duplicates(nums: list) -> list:
     """
@@ -2299,6 +2462,7 @@ def consecutive_duplicates(nums: list) -> list:
             values.append(i)
     return values
 
+
 def remove_duplicates(nums: list) -> list:
     """
     Remove duplicate numbers from the given list, preserving the order of first occurrences.
@@ -2316,6 +2480,7 @@ def remove_duplicates(nums: list) -> list:
             value.append(i)
     return value
 
+
 def remove_elements(list1: list, list2: list) -> list:
     """
     Removes all elements from list1 that are present in list2.
@@ -2330,6 +2495,7 @@ def remove_elements(list1: list, list2: list) -> list:
     # Write your code here
     return [nums for nums in list1 if nums not in list2]
 
+
 def remove_occurrences(s: str, ch: str) -> str:
     """
     Removes the first and last occurrence of the character `ch` from the string `s`.
@@ -2342,18 +2508,18 @@ def remove_occurrences(s: str, ch: str) -> str:
         str: The modified string with the first and last occurrence of `ch` removed.
     """
     # Implement the function logic here
-        # Find the index of the first occurrence of the character `ch`
+    # Find the index of the first occurrence of the character `ch`
     first_index = s.find(ch)
-    
+
     # Find the index of the last occurrence of the character `ch`
     last_index = s.rfind(ch)
-    
+
     # If either the first or last occurrence is not found, return the original string
     if first_index == -1 or last_index == -1:
         return s
-    
+
     # Remove the first and last occurrence by slicing the string
-    return s[:first_index] + s[first_index+1:last_index] + s[last_index+1:]
+    return s[:first_index] + s[first_index + 1 : last_index] + s[last_index + 1 :]
 
 
 def remove_kth_element(lst: list, k: int) -> list:
@@ -2372,8 +2538,9 @@ def remove_kth_element(lst: list, k: int) -> list:
     if len(lst) < k or k <= 0:
         return lst
     else:
-        lst.pop(k-1)
+        lst.pop(k - 1)
         return lst
+
 
 def remove_leading_zeroes(ip: str) -> str:
     """
@@ -2386,12 +2553,13 @@ def remove_leading_zeroes(ip: str) -> str:
         str: The IP address with leading zeroes removed.
     """
     # Replace this with the implementation
-    arr = ip.split('.')
+    arr = ip.split(".")
     for i in range(len(arr)):
-        arr[i] = arr[i].strip('0')
-        if arr[i] == '':
-            arr[i] = '0'
-    return '.'.join(arr)
+        arr[i] = arr[i].strip("0")
+        if arr[i] == "":
+            arr[i] = "0"
+    return ".".join(arr)
+
 
 def remove_lowercase(input_string: str) -> str:
     """
@@ -2404,7 +2572,8 @@ def remove_lowercase(input_string: str) -> str:
         str: The string with lowercase characters removed.
     """
     # Replace this comment with your implementation
-    return ''.join([char for char in re.findall("[A-Z]", input_string)])
+    return "".join([char for char in re.findall("[A-Z]", input_string)])
+
 
 def remove_nested(input_tuple):
     """
@@ -2427,6 +2596,7 @@ def remove_nested(input_tuple):
     # Return the result tuple
     return result
 
+
 def remove_parentheses(text):
     """
     Remove all parentheses and their contents from the given string.
@@ -2438,7 +2608,8 @@ def remove_parentheses(text):
         str: The string with parentheses and their contents removed.
     """
     # Use regex to replace anything inside parentheses (including the parentheses themselves) with an empty string
-    return re.sub("  ", " ", re.sub(r'\([^)]*\)', '', text).strip())
+    return re.sub("  ", " ", re.sub(r"\([^)]*\)", "", text).strip())
+
 
 def remove_length(input_string: str, k: int) -> str:
     """
@@ -2452,7 +2623,8 @@ def remove_length(input_string: str, k: int) -> str:
     str: The modified string with specified words removed.
     """
 
-    return ' '.join([word for word in input_string.split(" ") if len(word) != k])
+    return " ".join([word for word in input_string.split(" ") if len(word) != k])
+
 
 def replace_specialchar(text: str) -> str:
     """
@@ -2466,6 +2638,7 @@ def replace_specialchar(text: str) -> str:
     """
     # Use a regular expression to find and replace the specified characters
     return re.sub("[., ]", ":", text)
+
 
 def replace_spaces(text: str) -> str:
     """
@@ -2490,7 +2663,7 @@ def replace_spaces(text: str) -> str:
             result.append(char)  # Keep other characters as is
 
     # Join the list back into a string and return it
-    return ''.join(result)
+    return "".join(result)
 
 
 def reverse_array_upto_k(arr, k):
@@ -2505,14 +2678,16 @@ def reverse_array_upto_k(arr, k):
         list: A new list with the first k elements reversed.
     """
     # Placeholder for the solution
-    for i in range(int(k/2)):
+    for i in range(int(k / 2)):
         temp = arr[i]
-        arr[i] = arr[k-i-1]
-        arr[k-i-1] = temp
+        arr[i] = arr[k - i - 1]
+        arr[k - i - 1] = temp
     return arr
+
 
 def reverse_string(string1: str) -> str:
     return string1[::-1]
+
 
 def reverse_string_list(stringlist):
     """
@@ -2529,6 +2704,7 @@ def reverse_string_list(stringlist):
         reverseList.append(reverse_string(i))
     return reverseList
 
+
 def reverse_vowels(s: str) -> str:
     """
     Reverse only the vowels in the input string.
@@ -2544,19 +2720,20 @@ def reverse_vowels(s: str) -> str:
     # Placeholder for solution
     vowel_positions = [i for i, char in enumerate(s) if char in vowels]
     vowel_chars = [s[i] for i in vowel_positions]
-    
+
     # Reverse the list of vowels
     vowel_chars.reverse()
-    
+
     # Convert the string to a list (since strings are immutable)
     s_list = list(s)
-    
+
     # Replace the vowels in the original string with the reversed vowels
     for i, pos in enumerate(vowel_positions):
         s_list[pos] = vowel_chars[i]
-    
+
     # Join the list back into a string
-    return ''.join(s_list)
+    return "".join(s_list)
+
 
 def reverse_words(s: str) -> str:
     """
@@ -2574,6 +2751,7 @@ def reverse_words(s: str) -> str:
     for i in reversed(temp):
         value = value + i + " "
     return value.strip()
+
 
 def rgb_to_hsv(r, g, b):
     """
@@ -2616,6 +2794,7 @@ def rgb_to_hsv(r, g, b):
 
     return (h, s, v)
 
+
 def right_insertion(a: list, x: any) -> int:
     """
     Determine the right insertion point for x in the sorted list a.
@@ -2629,7 +2808,8 @@ def right_insertion(a: list, x: any) -> int:
     """
     # Use the bisect module to find the right insertion point
     return bisect.bisect_right(a, x)
-    
+
+
 def left_rotate(n, d):
     """
     Rotate the bits of a 32-bit integer n to the left by d positions.
@@ -2643,7 +2823,7 @@ def left_rotate(n, d):
     """
     # Define the number of bits in the integer
     INT_BITS = 32
-    
+
     # Normalize d to be within the 32-bit range
     d = d % INT_BITS
 
@@ -2651,6 +2831,7 @@ def left_rotate(n, d):
     rotated = ((n << d) & 0xFFFFFFFF) | (n >> (INT_BITS - d))
 
     return rotated
+
 
 def rotate_right(lst, m):
     """
@@ -2666,12 +2847,13 @@ def rotate_right(lst, m):
     # Handle the case when the list is empty or m is 0
     if not lst or m == 0:
         return lst
-    
+
     # Normalize m to be within the length of the list
     m = m % len(lst)
-    
+
     # Rotate the list by slicing
     return lst[-m:] + lst[:-m]
+
 
 def second_smallest(numbers):
     """
@@ -2693,7 +2875,8 @@ def second_smallest(numbers):
     else:
         return numbers[1]
 
-def sector_area(radius: float, angle: float) -> float|None:
+
+def sector_area(radius: float, angle: float) -> float | None:
     """
     Calculate the area of a sector of a circle.
 
@@ -2709,7 +2892,8 @@ def sector_area(radius: float, angle: float) -> float|None:
         return None
     # Placeholder for the calculation
     area = math.pi * pow(radius, 2)
-    return (area * (angle / 360))
+    return area * (angle / 360)
+
 
 def shell_sort(my_list: list[int]) -> list[int]:
     """
@@ -2734,10 +2918,11 @@ def shell_sort(my_list: list[int]) -> list[int]:
                 my_list[j] = my_list[j - gap]
                 j -= gap
             my_list[j] = temp
-        
+
         gap //= 2  # Reduce the gap size
 
     return my_list
+
 
 def find_min_length(lst: list[list]) -> int:
     """
@@ -2760,6 +2945,7 @@ def find_min_length(lst: list[list]) -> int:
             smallest = len(i)
     return smallest
 
+
 def find_smallest_missing(arr: list) -> int:
     """
     Find the smallest missing number in a sorted list of natural numbers.
@@ -2776,6 +2962,7 @@ def find_smallest_missing(arr: list) -> int:
             return i
     return len(arr)
 
+
 def next_power_of_2(n):
     """
     Find the smallest power of 2 greater than or equal to n.
@@ -2788,13 +2975,14 @@ def next_power_of_2(n):
     """
     if n == 0:
         return 1
-    
+
     # If n is already a power of 2, return it
     if (n & (n - 1)) == 0:
         return n
-    
+
     # Find the next power of 2 greater than n using bit manipulation
     return 1 << (n.bit_length())
+
 
 def find_index(n):
     """
@@ -2810,12 +2998,13 @@ def find_index(n):
     while True:
         # Calculate the triangular number T_index
         triangular_number = index * (index + 1) // 2
-        
+
         # Check if the number of digits of triangular_number is equal to n
         if len(str(triangular_number)) == n:
             return index
-        
+
         index += 1
+
 
 def snake_to_camel(snake_str: str) -> str:
     """
@@ -2835,6 +3024,7 @@ def snake_to_camel(snake_str: str) -> str:
         camel_str += i[0].capitalize() + i[1:]
     return camel_str
 
+
 def sort_dict_by_value(input_dict: dict[str, int]) -> List[Tuple[str, int]]:
     """
     Sorts a dictionary by its values in descending order.
@@ -2849,6 +3039,7 @@ def sort_dict_by_value(input_dict: dict[str, int]) -> List[Tuple[str, int]]:
     sorted_items = sorted(input_dict.items(), key=lambda x: x[1], reverse=True)
 
     return sorted_items
+
 
 def comb_sort(nums: list) -> list:
     """
@@ -2883,6 +3074,7 @@ def comb_sort(nums: list) -> list:
 
     return nums
 
+
 def sort_matrix(matrix: list[list[int]]) -> list[list[int]]:
     """
     Sorts a matrix in ascending order based on the sum of its rows.
@@ -2895,6 +3087,7 @@ def sort_matrix(matrix: list[list[int]]) -> list[list[int]]:
     """
     # Sort the matrix based on the sum of each row
     return sorted(matrix, key=sum)
+
 
 def sort_numeric_strings(nums_str: list[str]) -> list[int]:
     """
@@ -2909,6 +3102,7 @@ def sort_numeric_strings(nums_str: list[str]) -> list[int]:
     # Convert strings to integers, sort them, and return the sorted list
     return sorted([int(x) for x in nums_str])
 
+
 def sort_sublists(list_of_lists: list[list[str]]) -> list[list[str]]:
     """
     Sort each sublist of strings in a given list of lists.
@@ -2920,7 +3114,8 @@ def sort_sublists(list_of_lists: list[list[str]]) -> list[list[str]]:
         list of list of str: A new list with each sublist sorted.
     """
     # Implement the function here
-    return ([sorted(x) for x in list_of_lists])
+    return [sorted(x) for x in list_of_lists]
+
 
 def sort_by_second_value(data: list[tuple]) -> list[tuple]:
     """
@@ -2935,6 +3130,7 @@ def sort_by_second_value(data: list[tuple]) -> list[tuple]:
     # Implement the sorting logic here
     return sorted(data, key=lambda x: x[1])
 
+
 def split_and_rearrange(lst: list, n: int) -> list:
     """
     Splits the list at the nth index and rearranges it such that the first part is moved to the end.
@@ -2947,7 +3143,8 @@ def split_and_rearrange(lst: list, n: int) -> list:
         list: The rearranged list.
     """
     # Implement the function logic here
-    return (lst[n:] + lst[:n])
+    return lst[n:] + lst[:n]
+
 
 def list_split(S: list, step: int) -> list[list]:
     """
@@ -2962,12 +3159,13 @@ def list_split(S: list, step: int) -> list[list]:
     """
     # Initialize a list of empty sublists
     result = [[] for _ in range(step)]
-    
+
     # Distribute elements from the original list into the sublists
     for i, element in enumerate(S):
         result[i % step].append(element)
-    
+
     return result
+
 
 def split_lists(lst: list[list]) -> list[list]:
     """
@@ -2982,6 +3180,7 @@ def split_lists(lst: list[list]) -> list[list]:
     # Your code here
     return [[x[0] for x in lst], [x[1] for x in lst]]
 
+
 def calculate_surface_area(base_edge: float, slant_height: float) -> float:
     """
     Calculate the surface area of a square pyramid.
@@ -2994,7 +3193,8 @@ def calculate_surface_area(base_edge: float, slant_height: float) -> float:
         float: The surface area of the square pyramid.
     """
     # Implement the formula for the surface area of a square pyramid
-    return (pow(base_edge, 2) + (2 * base_edge * slant_height))
+    return pow(base_edge, 2) + (2 * base_edge * slant_height)
+
 
 def calculate_square_root(numbers: list) -> list:
     """
@@ -3008,6 +3208,7 @@ def calculate_square_root(numbers: list) -> list:
     """
     # TODO: Implement the calculate_square_root function
     return [math.sqrt(x) for x in numbers]
+
 
 def sub(first, *args):
     """
@@ -3026,6 +3227,7 @@ def sub(first, *args):
         total = total - i
     return total
 
+
 def difference(n: int) -> int:
     """
     Calculate the difference between the sum of the cubes of the first n natural numbers
@@ -3041,7 +3243,8 @@ def difference(n: int) -> int:
     if n == 0:
         return 0
     else:
-        return (difference(n-1) + (pow(n, 3) - n))
+        return difference(n - 1) + (pow(n, 3) - n)
+
 
 def digit_distance_nums(n1, n2):
     """
@@ -3057,16 +3260,17 @@ def digit_distance_nums(n1, n2):
     # Convert both numbers to strings
     str_n1 = str(n1)
     str_n2 = str(n2)
-    
+
     # Pad the shorter string with leading zeros
     max_len = max(len(str_n1), len(str_n2))
     str_n1 = str_n1.zfill(max_len)
     str_n2 = str_n2.zfill(max_len)
-    
+
     # Calculate the sum of absolute differences of corresponding digits
     total_difference = sum(abs(int(d1) - int(d2)) for d1, d2 in zip(str_n1, str_n2))
-    
+
     return total_difference
+
 
 def sum_digits(n: int) -> int:
     """
@@ -3086,6 +3290,7 @@ def sum_digits(n: int) -> int:
         total += int(i)
     return total
 
+
 def sum_of_even_factors(n: int) -> int:
     """
     Calculate the sum of all even factors of a given number.
@@ -3098,7 +3303,7 @@ def sum_of_even_factors(n: int) -> int:
     """
     # Placeholder for the solution
     even_sum = 0
-    
+
     # Loop through possible divisors from 1 to sqrt(n)
     for i in range(1, int(n**0.5) + 1):
         if n % i == 0:
@@ -3109,8 +3314,9 @@ def sum_of_even_factors(n: int) -> int:
             if i != n // i:
                 if (n // i) % 2 == 0:
                     even_sum += n // i
-    
+
     return even_sum
+
 
 def even_binomial_coeff_sum(n: int) -> int:
     """
@@ -3123,13 +3329,14 @@ def even_binomial_coeff_sum(n: int) -> int:
     int: The sum of the binomial coefficients at even indices.
     """
     total = 0
-    
+
     # Iterate over even indices: 0, 2, 4, ..., up to n
     for i in range(0, n + 1, 2):
         # Binomial coefficient C(n, i) = n! / (i! * (n-i)!)
         total += math.comb(n, i)  # math.comb efficiently computes C(n, i)
-    
+
     return total
+
 
 def sum_even_and_even_index(arr: list[int]) -> int:
     """
@@ -3150,6 +3357,7 @@ def sum_even_and_even_index(arr: list[int]) -> int:
     # Placeholder for the solution
     return total
 
+
 def sum_fourth_power_of_odds(n: int) -> int:
     """
     Calculate the sum of the fourth powers of the first n odd natural numbers.
@@ -3165,8 +3373,9 @@ def sum_fourth_power_of_odds(n: int) -> int:
     # Iterate over the first n odd numbers
     for i in range(1, n + 1):
         # Placeholder for the logic to calculate the fourth power and add to total
-        total += pow(((i*2) - 1), 4)
+        total += pow(((i * 2) - 1), 4)
     return total
+
 
 def sum_uppercase_names_length(names: list[str]) -> int:
     """
@@ -3181,6 +3390,7 @@ def sum_uppercase_names_length(names: list[str]) -> int:
     # Filter the names to include only those starting with an uppercase letter
     # Calculate the sum of the lengths of the filtered names
     return sum([len(x) for x in names if x[0].isupper()])
+
 
 def sum_non_repeated_elements(nums: list) -> int:
     """
@@ -3202,6 +3412,7 @@ def sum_non_repeated_elements(nums: list) -> int:
             badValues.append(i)
     return sum([x for x in values if x not in badValues])
 
+
 def sum_in_range(l: int, r: int) -> int:
     """
     Calculate the sum of all odd natural numbers within the inclusive range [l, r].
@@ -3214,7 +3425,8 @@ def sum_in_range(l: int, r: int) -> int:
     int: The sum of all odd natural numbers within the range.
     """
     # Placeholder for the solution
-    return sum([x for x in range(l, r+1) if x%2 == 1])
+    return sum([x for x in range(l, r + 1) if x % 2 == 1])
+
 
 def get_divisors(n: int) -> list[int]:
     divisors = []
@@ -3222,6 +3434,7 @@ def get_divisors(n: int) -> list[int]:
         if n % i == 0:
             divisors.append(i)
     return divisors
+
 
 def sum_of_common_divisors(a, b):
     """
@@ -3237,6 +3450,7 @@ def sum_of_common_divisors(a, b):
 
     # Placeholder for the solution
     return sum([x for x in get_divisors(a) if x in get_divisors(b)])
+
 
 def sum_of_digits(nums: list) -> int:
     """
@@ -3258,6 +3472,7 @@ def sum_of_digits(nums: list) -> int:
                 total_sum += int(temp[i])
     return total_sum
 
+
 def power_base_sum(base: int, power: int) -> int:
     """
     Calculate the sum of all digits of the number obtained by raising `base` to the power of `power`.
@@ -3274,13 +3489,14 @@ def power_base_sum(base: int, power: int) -> int:
     # Sum the digits and return the result
     return sum_of_digits([pow(base, power)])
 
+
 def div_sum(n: int) -> int:
     """
     Calculate the sum of divisors of a given number, excluding the number itself.
-    
+
     Args:
         n (int): The number to calculate divisors for.
-    
+
     Returns:
         int: The sum of divisors of the number, excluding the number itself.
     """
@@ -3290,18 +3506,20 @@ def div_sum(n: int) -> int:
             divisors.append(i)
     return sum(divisors)
 
+
 def are_equivalent(num1: int, num2: int) -> bool:
     """
     Determine if the sum of divisors of two numbers are equivalent.
-    
+
     Args:
         num1 (int): The first number.
         num2 (int): The second number.
-    
+
     Returns:
         bool: True if the sum of divisors of num1 and num2 are equivalent, False otherwise.
     """
     return div_sum(num1) == div_sum(num2)
+
 
 def sum_of_divisors(n: int) -> int:
     """
@@ -3314,7 +3532,8 @@ def sum_of_divisors(n: int) -> int:
     int: The sum of all divisors of n.
     """
     # Placeholder for the solution
-    return (div_sum(n) + n)
+    return div_sum(n) + n
+
 
 def sum_range_list(lst: list, start: int, end: int) -> int:
     """
@@ -3329,7 +3548,8 @@ def sum_range_list(lst: list, start: int, end: int) -> int:
         int: The sum of the elements in the specified range.
     """
     # Placeholder for the solution
-    return sum([x for x in lst[start:end+1]])
+    return sum([x for x in lst[start : end + 1]])
+
 
 def is_sum_of_powers_of_two(n: int) -> bool:
     """
@@ -3344,6 +3564,7 @@ def is_sum_of_powers_of_two(n: int) -> bool:
     # Placeholder for the solution
     return n >= 0
 
+
 def sum_of_squares_of_even_numbers(n: int) -> int:
     """
     Calculate the sum of squares of the first n even natural numbers.
@@ -3357,6 +3578,7 @@ def sum_of_squares_of_even_numbers(n: int) -> int:
     # Placeholder for the solution
     return sum([pow(2 * i, 2) for i in range(1, n + 1)])
 
+
 def sum_of_squares_of_odds(n: int) -> int:
     """
     Calculate the sum of the squares of the first n odd natural numbers.
@@ -3367,7 +3589,8 @@ def sum_of_squares_of_odds(n: int) -> int:
     Returns:
         int: The sum of the squares of the first n odd natural numbers.
     """
-    return sum([pow((x * 2) - 1, 2) for x in range(1, n+1)])
+    return sum([pow((x * 2) - 1, 2) for x in range(1, n + 1)])
+
 
 def sum_of_xor_pairs(numbers: List[int]) -> int:
     """
@@ -3385,8 +3608,9 @@ def sum_of_xor_pairs(numbers: List[int]) -> int:
     for i in range(n):
         for j in range(i + 1, n):
             result += numbers[i] ^ numbers[j]
-    
+
     return result
+
 
 def sum_series(n: int) -> int:
     """
@@ -3401,7 +3625,8 @@ def sum_series(n: int) -> int:
     if n <= 0:
         return 0
     else:
-        return (n + sum_series(n-2))
+        return n + sum_series(n - 2)
+
 
 def calculate_sum_of_squares(numbers: list) -> int:
     """
@@ -3416,6 +3641,7 @@ def calculate_sum_of_squares(numbers: list) -> int:
     # TODO: Implement the calculate_sum_of_squares function
     return sum([pow(x, 2) for x in numbers])
 
+
 def area_tetrahedron(side: float) -> float:
     """
     Calculate the surface area of a regular tetrahedron given the side length.
@@ -3427,7 +3653,8 @@ def area_tetrahedron(side: float) -> float:
         float: The surface area of the tetrahedron.
     """
     # Placeholder for the implementation
-    return (math.sqrt(3) * pow(side, 2))
+    return math.sqrt(3) * pow(side, 2)
+
 
 def trim_tuple(tuple_list: list[tuple], k: int) -> list[tuple]:
     """
@@ -3445,10 +3672,13 @@ def trim_tuple(tuple_list: list[tuple], k: int) -> list[tuple]:
     # Iterate over each tuple in the list
     for t in tuple_list:
         # Trim the tuple by removing k elements from both ends
-        trimmed_tuple = t[k:-k] if len(t) > 2 * k else ()  # Avoid empty tuples if not enough elements
+        trimmed_tuple = (
+            t[k:-k] if len(t) > 2 * k else ()
+        )  # Avoid empty tuples if not enough elements
         result.append(trimmed_tuple)
     # Return the result list
     return result
+
 
 def extract_column(tuples: list[tuple], index: int) -> list:
     """
@@ -3464,6 +3694,7 @@ def extract_column(tuples: list[tuple], index: int) -> list:
     # Placeholder for the solution
     return [t[index] for t in tuples if index < len(t)]
 
+
 def subtract_elements(tuple1: tuple, tuple2: tuple) -> tuple:
     """
     Subtracts corresponding elements of two tuples.
@@ -3477,6 +3708,7 @@ def subtract_elements(tuple1: tuple, tuple2: tuple) -> tuple:
     """
     # Implement the subtraction logic here
     return tuple(x - y for x, y in zip(tuple1, tuple2))
+
 
 def tuple_modulo(tuple1: tuple, tuple2: tuple) -> tuple:
     """
@@ -3496,6 +3728,7 @@ def tuple_modulo(tuple1: tuple, tuple2: tuple) -> tuple:
     # Placeholder for the solution
     return tuple(x % y for x, y in zip(tuple1, tuple2))
 
+
 def count_tuple_occurrences(input_list):
     """
     Count the occurrences of unique tuples in the input list, treating tuples
@@ -3509,9 +3742,10 @@ def count_tuple_occurrences(input_list):
     """
     # Reverse each tuple in the list before counting
     reversed_tuples = [tuple(sorted(t)) for t in input_list]
-    
+
     # Use Counter to count occurrences of each tuple in the reversed list
     return dict(Counter(reversed_tuples))
+
 
 def index_multiplication(tuple1: tuple, tuple2: tuple) -> tuple:
     """
@@ -3525,9 +3759,12 @@ def index_multiplication(tuple1: tuple, tuple2: tuple) -> tuple:
         tuple of tuples: A new tuple of tuples with index-wise multiplied elements.
     """
     # Initialize the result tuple
-    result = tuple(tuple(x * y for x, y in zip(t1, t2)) for t1, t2 in zip(tuple1, tuple2))
-    
+    result = tuple(
+        tuple(x * y for x, y in zip(t1, t2)) for t1, t2 in zip(tuple1, tuple2)
+    )
+
     return result
+
 
 def multiply_elements(input_tuple: tuple) -> tuple:
     """
@@ -3542,13 +3779,14 @@ def multiply_elements(input_tuple: tuple) -> tuple:
     """
     # Initialize an empty list to store the products
     result = []
-    
+
     # Loop through the tuple and multiply consecutive elements
     for i in range(len(input_tuple) - 1):
         result.append(input_tuple[i] * input_tuple[i + 1])
-    
+
     # Return the result as a tuple
     return tuple(result)
+
 
 def find_combinations(tuple_list: list[tuple]) -> list[tuple]:
     """
@@ -3564,41 +3802,43 @@ def find_combinations(tuple_list: list[tuple]) -> list[tuple]:
     # Placeholder for the solution
     # List to store the result
     result = []
-    
+
     # Generate all pairs of tuples
     for t1, t2 in combinations(tuple_list, 2):
         # Sum corresponding elements of the tuples
         summed_tuple = (t1[0] + t2[0], t1[1] + t2[1])
         result.append(summed_tuple)
-    
+
     return result
+
 
 def tuple_to_dict(input_tuple: tuple) -> dict:
     """
-    Given a tuple, return a dictionary where the keys are the first elements of pairs, 
+    Given a tuple, return a dictionary where the keys are the first elements of pairs,
     and the values are the sum of the second elements of all pairs with the same key.
 
     Args:
     input_tuple (tuple): A tuple containing pairs of values.
 
     Returns:
-    dict: A dictionary where the key is the first element of the pair and the value 
+    dict: A dictionary where the key is the first element of the pair and the value
           is the sum of the second elements of all pairs with the same key.
     """
     result = {}
-    
+
     # Loop through the tuple in steps of 2 (pairs)
     for i in range(0, len(input_tuple), 2):
         key = input_tuple[i]  # First element of the pair
-        value = input_tuple[i+1]  # Second element of the pair
-        
+        value = input_tuple[i + 1]  # Second element of the pair
+
         # Add the value to the corresponding key in the result dictionary
         if key in result:
             result[key] += value  # Add to the existing value
         else:
             result[key] = value  # Initialize with the first value
-    
+
     return result
+
 
 def tuple_to_int(nums: tuple) -> int:
     """
@@ -3612,6 +3852,7 @@ def tuple_to_int(nums: tuple) -> int:
     """
     # Placeholder for the solution
     return int("".join([str(x) for x in nums]))
+
 
 def union_elements(tuple1: tuple, tuple2: tuple) -> tuple:
     """
@@ -3628,6 +3869,7 @@ def union_elements(tuple1: tuple, tuple2: tuple) -> tuple:
     value = tuple1 + tuple2
     return tuple(sorted(remove_duplicates(value)))
 
+
 def find_unique_element(arr: list) -> int:
     """
     Given a list where every element appears twice except for one element that appears once,
@@ -3640,13 +3882,14 @@ def find_unique_element(arr: list) -> int:
         int: The unique element that appears only once.
     """
     unique_element = 0
-    
+
     # XOR all elements in the list
     for num in arr:
         unique_element ^= num  # XOR the current number with the running result
-    
+
     return unique_element
-            
+
+
 def find_unique_elements(lst: list) -> list:
     """
     Finds the unique elements in a given list.
@@ -3663,6 +3906,7 @@ def find_unique_elements(lst: list) -> list:
         if i not in value:
             value.append(i)
     return value
+
 
 def unique_product(list_data: list) -> int:
     """
@@ -3683,6 +3927,7 @@ def unique_product(list_data: list) -> int:
         product = product * i
     return product
 
+
 def find_unique_characters(string: str) -> str:
     """
     Finds the unique characters in a given string.
@@ -3694,6 +3939,7 @@ def find_unique_characters(string: str) -> str:
         str: A new string with the unique characters.
     """
     return "".join([char for i, char in enumerate(string) if char not in string[:i]])
+
 
 def count_unique_tuples(lst: list) -> int:
     """
@@ -3708,9 +3954,10 @@ def count_unique_tuples(lst: list) -> int:
     """
     # Convert each tuple into a sorted tuple, and add it to a set to ensure uniqueness
     unique_tuples = {tuple(sorted(t)) for t in lst}
-    
+
     # Return the count of unique tuples
     return len(unique_tuples)
+
 
 def is_decimal(num: str) -> bool:
     """
@@ -3727,6 +3974,7 @@ def is_decimal(num: str) -> bool:
     # Placeholder for the solution
     return None != re.search(expression, num)
 
+
 def text_lowercase_underscore(text: str) -> bool:
     """
     Check if the input string contains sequences of lowercase letters joined by an underscore.
@@ -3738,9 +3986,10 @@ def text_lowercase_underscore(text: str) -> bool:
         bool: True if the string matches the pattern, False otherwise.
     """
     # Define the pattern for lowercase letters joined by an underscore
-    pattern = r'^[a-z]+_[a-z]+$'  # TODO: Add the correct regex pattern
+    pattern = r"^[a-z]+_[a-z]+$"  # TODO: Add the correct regex pattern
     # Check if the pattern matches the input text
     return None != re.search(pattern, text)
+
 
 def count_word_frequency(file_path: str):
     """
@@ -3758,7 +4007,7 @@ def count_word_frequency(file_path: str):
         text = file.read()
 
     # Remove unwanted characters (strip extra punctuation but leave useful punctuation like !, ?)
-    cleaned_text = re.sub(r'[^a-zA-Z0-9\s!.,?;\'"-]', '', text)
+    cleaned_text = re.sub(r'[^a-zA-Z0-9\s!.,?;\'"-]', "", text)
 
     # Split the cleaned text into words
     words = cleaned_text.split()
@@ -3767,6 +4016,7 @@ def count_word_frequency(file_path: str):
     word_frequency = Counter(words)
 
     return dict(word_frequency)
+
 
 def zero_to_nonzero_ratio(nums: list) -> float:
     """
@@ -3791,9 +4041,10 @@ def zero_to_nonzero_ratio(nums: list) -> float:
 
     # Calculate and return the ratio
     if nonzero_count == 0:
-        return float('inf')
+        return float("inf")
     else:
-        return zero_count/nonzero_count
+        return zero_count / nonzero_count
+
 
 def create_dictionary(keys: list, values: list) -> dict:
     """
@@ -3809,6 +4060,7 @@ def create_dictionary(keys: list, values: list) -> dict:
     # TODO: Implement the create_dictionary function
     return {key: value for key, value in zip(keys, values)}
 
+
 def myzip(*lists: list) -> list:
     """
     Zips an arbitrary number of lists together and returns the zipped list.
@@ -3820,6 +4072,7 @@ def myzip(*lists: list) -> list:
     list: The zipped list.
     """
     return [list(x) for x in zip(*lists)]
+
 
 def zipwith(f, *lists: list) -> list:
     """
@@ -3834,7 +4087,8 @@ def zipwith(f, *lists: list) -> list:
     """
     return [f(*x) for x in zip(*lists)]
 
-def add(*args) -> int|float:
+
+def add(*args) -> int | float:
     """
     Adds an arbitrary number of arguments together and returns the sum.
 
@@ -3846,6 +4100,7 @@ def add(*args) -> int|float:
     """
     # TODO: Implement the add function
     return sum(args)
+
 
 def add_dict_to_tuple(test_tup: tuple, test_dict: dict) -> tuple:
     """
@@ -3861,6 +4116,7 @@ def add_dict_to_tuple(test_tup: tuple, test_dict: dict) -> tuple:
     # Your code here
     return test_tup + (test_dict,)
 
+
 def capital_words_spaces(input_string: str) -> str:
     """
     Insert spaces between words starting with capital letters in the given string.
@@ -3872,7 +4128,10 @@ def capital_words_spaces(input_string: str) -> str:
         str: A new string with spaces inserted between capitalized words.
     """
     # Use a regular expression to identify the pattern and insert spaces
-    return "".join([(x + " ") for x in re.findall(r"[A-Z][a-z]*", input_string)]).strip()
+    return "".join(
+        [(x + " ") for x in re.findall(r"[A-Z][a-z]*", input_string)]
+    ).strip()
+
 
 def get_adjacent_coordinates(coord: tuple) -> list:
     """
@@ -3886,11 +4145,17 @@ def get_adjacent_coordinates(coord: tuple) -> list:
     """
     x, y = coord  # Unpack the coordinate into x and y
     adjacent_coords = [
-        (x - 1, y - 1), (x, y - 1), (x + 1, y - 1),  # Diagonal and above
-        (x - 1, y),                   (x + 1, y),       # Left and Right
-        (x - 1, y + 1), (x, y + 1), (x + 1, y + 1)     # Diagonal and below
+        (x - 1, y - 1),
+        (x, y - 1),
+        (x + 1, y - 1),  # Diagonal and above
+        (x - 1, y),
+        (x + 1, y),  # Left and Right
+        (x - 1, y + 1),
+        (x, y + 1),
+        (x + 1, y + 1),  # Diagonal and below
     ]
     return adjacent_coords
+
 
 def angle_of_complex(real: float, imag: float) -> float:
     """
@@ -3907,6 +4172,7 @@ def angle_of_complex(real: float, imag: float) -> float:
     # Use cmath.phase to calculate the angle
     return cmath.phase(complex(real, imag))
 
+
 def add_lists(test_list: list, test_tup: tuple) -> tuple:
     """
     Append the elements of test_list to test_tup and return the resulting tuple.
@@ -3920,6 +4186,7 @@ def add_lists(test_list: list, test_tup: tuple) -> tuple:
     """
     # Combine the tuple and list into a new tuple
     return test_tup + tuple(test_list)
+
 
 def apply_format_to_list(elements: list, format_string: str) -> list:
     """
@@ -3935,6 +4202,7 @@ def apply_format_to_list(elements: list, format_string: str) -> list:
     # Replace the following line with your implementation
     return [re.sub("{}", str(x), format_string) for x in elements]
 
+
 def is_armstrong_number(number: int) -> bool:
     """
     Determine if the given number is an Armstrong number.
@@ -3948,6 +4216,7 @@ def is_armstrong_number(number: int) -> bool:
     # Placeholder for the solution
     return number == sum([pow(int(x), len(str(number))) for x in str(number)])
 
+
 def intersection_array(array_nums1: list, array_nums2: list) -> list:
     """
     Find the intersection of two arrays.
@@ -3960,7 +4229,8 @@ def intersection_array(array_nums1: list, array_nums2: list) -> list:
         list: A list containing the intersection of the two input lists.
     """
     # Your code here
-    return ([x for x in array_nums1 if x in array_nums2])
+    return [x for x in array_nums1 if x in array_nums2]
+
 
 def average_tuple(nums: tuple) -> list:
     """
@@ -3974,15 +4244,16 @@ def average_tuple(nums: tuple) -> list:
     """
     # Placeholder for the solution
     total = [0] * len(nums[0])  # Assuming all tuples have the same length
-    
+
     # Sum the values in corresponding positions
     for t in nums:
         for i in range(len(t)):
             total[i] += t[i]
-    
+
     # Calculate the average by dividing the sum by the number of tuples
     num_tuples = len(nums)
     return [x / num_tuples for x in total]
+
 
 def babylonian_squareroot(number: float, tolerance: float = 1e-6) -> float:
     """
@@ -4017,6 +4288,7 @@ def babylonian_squareroot(number: float, tolerance: float = 1e-6) -> float:
     # Return the computed square root
     return guess
 
+
 def bitwise_xor(tuple1: tuple, tuple2: tuple) -> tuple:
     """
     Perform bitwise XOR operation between corresponding elements of two tuples.
@@ -4037,6 +4309,7 @@ def bitwise_xor(tuple1: tuple, tuple2: tuple) -> tuple:
 
     return result
 
+
 def power(a: int, b: int) -> int:
     """
     Calculate the value of 'a' raised to the power of 'b' using recursion.
@@ -4053,7 +4326,8 @@ def power(a: int, b: int) -> int:
         return 1
     elif a == 0:
         return 0
-    return (a * power(a, b-1))
+    return a * power(a, b - 1)
+
 
 def wind_chill(v: float, t: float) -> int:
     """
@@ -4069,6 +4343,7 @@ def wind_chill(v: float, t: float) -> int:
     # Placeholder for the wind chill calculation
     return int(13.12 + 0.6215 * t - 11.37 * pow(v, 0.16) + 0.3965 * t * pow(v, 0.16))
 
+
 def contains_a_followed_by_bbs(text: str) -> bool:
     """
     Check if the string contains 'a' followed by exactly two or three 'b' characters.
@@ -4082,7 +4357,9 @@ def contains_a_followed_by_bbs(text: str) -> bool:
     # Write your implementation here
     return bool(re.search(r"a[b]{2,3}(?!b)", text))
 
+
 from collections import deque
+
 
 def check_expression(expression: str) -> bool:
     """
@@ -4098,11 +4375,7 @@ def check_expression(expression: str) -> bool:
     stack = deque()
 
     # Create a mapping of closing brackets to their corresponding opening brackets
-    matching_bracket = {
-        ')': '(',
-        '}': '{',
-        ']': '['
-    }
+    matching_bracket = {")": "(", "}": "{", "]": "["}
 
     # Iterate through each character in the expression
     for char in expression:
@@ -4116,6 +4389,7 @@ def check_expression(expression: str) -> bool:
 
     # If the stack is empty, all brackets are matched
     return len(stack) == 0
+
 
 def all_bits_unset_in_range(n: int, l: int, r: int) -> bool:
     """
@@ -4131,9 +4405,10 @@ def all_bits_unset_in_range(n: int, l: int, r: int) -> bool:
     """
     # Create a mask that has 1's in the positions [l, r]
     mask = ((1 << (r - l + 1)) - 1) << (l - 1)
-    
+
     # Check if the bits in the range [l, r] are all unset
     return (n & mask) == 0
+
 
 def check_consecutive(lst: list) -> bool:
     """
@@ -4159,6 +4434,7 @@ def check_consecutive(lst: list) -> bool:
 
     return True
 
+
 def check_value(dictionary: dict, value: any) -> bool:
     """
     Check if all values in the dictionary are equal to the specified value.
@@ -4175,6 +4451,7 @@ def check_value(dictionary: dict, value: any) -> bool:
         if i != value:
             return False
     return True
+
 
 def contains_duplicates(nums: list) -> bool:
     """
@@ -4195,6 +4472,7 @@ def contains_duplicates(nums: list) -> bool:
             temp.append(i)
     return False
 
+
 def check_equal_tuple_lengths(tuples_list: list) -> bool:
     """
     Determine if all tuples in the list have the same length.
@@ -4213,6 +4491,7 @@ def check_equal_tuple_lengths(tuples_list: list) -> bool:
             return False
     return True
 
+
 def has_even_divisors_count(n: int) -> bool:
     """
     Determines whether the count of divisors of n is even.
@@ -4225,6 +4504,7 @@ def has_even_divisors_count(n: int) -> bool:
     """
     # Placeholder for the solution
     return bool(len(get_divisors(n)) % 2 == 0)
+
 
 def even_position(nums: list) -> bool:
     """
@@ -4242,6 +4522,7 @@ def even_position(nums: list) -> bool:
             return False
     return True
 
+
 def check_integer(text: str) -> bool:
     """
     Check if the given string represents a valid integer.
@@ -4257,6 +4538,7 @@ def check_integer(text: str) -> bool:
     # Placeholder for implementation
     return bool(re.match(r"^[+-]?[0-9]+$", text))
 
+
 def check_min_heap(arr):
     """
     Check if the given array represents a min heap.
@@ -4268,21 +4550,22 @@ def check_min_heap(arr):
         bool: True if the array represents a min heap, False otherwise.
     """
     n = len(arr)
-    
+
     # Check each node except the leaves (since leaves don't have children)
     for i in range((n // 2) - 1, -1, -1):
         left_child_index = 2 * i + 1
         right_child_index = 2 * i + 2
-        
+
         # Check if left child exists and if it violates the heap property
         if left_child_index < n and arr[i] > arr[left_child_index]:
             return False
-        
+
         # Check if right child exists and if it violates the heap property
         if right_child_index < n and arr[i] > arr[right_child_index]:
             return False
-    
+
     return True
+
 
 def is_monotonic(arr: list) -> bool:
     """
@@ -4298,16 +4581,17 @@ def is_monotonic(arr: list) -> bool:
     increasing = False
     decreasing = False
     for i in range(0, len(arr) - 1):
-        if arr[i] == arr[i+1]:
+        if arr[i] == arr[i + 1]:
             pass
-        elif arr[i] < arr[i+1]:
+        elif arr[i] < arr[i + 1]:
             increasing = True
-        elif arr[i] > arr[i+1]:
+        elif arr[i] > arr[i + 1]:
             decreasing = True
     if increasing and decreasing:
         return False
     else:
         return True
+
 
 def check_greater(arr: list, number: int) -> bool:
     """
@@ -4328,6 +4612,7 @@ def check_greater(arr: list, number: int) -> bool:
     # Compare the number with the largest element
     return bool(number > arr[-1])
 
+
 def find_parity(x):
     """
     Determine if the parity of the binary representation of x is odd.
@@ -4339,7 +4624,8 @@ def find_parity(x):
         bool: True if the parity is odd, False otherwise.
     """
     # Count the number of 1-bits in the binary representation of x
-    return bin(x).count('1') % 2 == 1
+    return bin(x).count("1") % 2 == 1
+
 
 def check_number_relation(n: int) -> bool:
     """
@@ -4351,27 +4637,29 @@ def check_number_relation(n: int) -> bool:
     Returns:
         bool: True if the condition is met, False otherwise.
     """
+
     # Helper function to reverse the digits of a number
     def reverse_number(num: int) -> int:
-    # Flag to handle negative numbers
+        # Flag to handle negative numbers
         is_negative = num < 0
         num = abs(num)
-        
+
         reversed_num = 0
-        
+
         while num != 0:
             # Extract the last digit and add it to the reversed number
             reversed_num = reversed_num * 10 + num % 10
             num //= 10  # Remove the last digit
-        
+
         # Reapply the negative sign if needed
         if is_negative:
             reversed_num = -reversed_num
-        
+
         return reversed_num
 
     # Placeholder for main logic
     return n + 1 == 2 * reverse_number(n)
+
 
 def odd_position(nums: list) -> bool:
     """
@@ -4389,6 +4677,7 @@ def odd_position(nums: list) -> bool:
             return False
     return True
 
+
 def differ_at_one_bit(a: int, b: int) -> bool:
     """
     Determine if two integers differ at exactly one bit position.
@@ -4402,6 +4691,7 @@ def differ_at_one_bit(a: int, b: int) -> bool:
     """
     # XOR the two numbers, and check if the result has exactly one '1' bit.
     return (a ^ b) != 0 and (a ^ b) & ((a ^ b) - 1) == 0
+
 
 def opposite_signs(x: int, y: int) -> bool:
     """
@@ -4417,7 +4707,8 @@ def opposite_signs(x: int, y: int) -> bool:
     # Implement the logic to check for opposite signs
     return (x * y) < 0
 
-def overlapping(seq1: list|tuple, seq2: list|tuple) -> bool:
+
+def overlapping(seq1: list | tuple, seq2: list | tuple) -> bool:
     """
     Check if any value in seq1 exists in seq2.
 
@@ -4430,8 +4721,10 @@ def overlapping(seq1: list|tuple, seq2: list|tuple) -> bool:
     """
     # Implement the logic to check for overlapping elements
     for i in seq1:
-        if i in seq2: return True
+        if i in seq2:
+            return True
     return False
+
 
 def is_samepatterns(colors: list, patterns: list) -> bool:
     """
@@ -4447,10 +4740,10 @@ def is_samepatterns(colors: list, patterns: list) -> bool:
     # Maps to store the correspondence between colors and patterns
     if len(colors) != len(patterns):
         return False
-    
+
     color_to_pattern = {}
     pattern_to_color = {}
-    
+
     for color, pattern in zip(colors, patterns):
         # Check if this color already has a different pattern
         if color in color_to_pattern and color_to_pattern[color] != pattern:
@@ -4458,12 +4751,13 @@ def is_samepatterns(colors: list, patterns: list) -> bool:
         # Check if this pattern already has a different color
         if pattern in pattern_to_color and pattern_to_color[pattern] != color:
             return False
-        
+
         # Otherwise, establish the mappings
         color_to_pattern[color] = pattern
         pattern_to_color[pattern] = color
-        
+
     return True
+
 
 def is_perfect_square(n: int) -> bool:
     """
@@ -4483,6 +4777,7 @@ def is_perfect_square(n: int) -> bool:
         i += 1
     return False
 
+
 def is_prime(n: int) -> bool:
     """
     Determine if the given integer is a prime number.
@@ -4496,6 +4791,7 @@ def is_prime(n: int) -> bool:
     # Implement the logic to check for prime numbers
     divisors = get_divisors(n)
     return bool(len(divisors) == 2)
+
 
 def is_product_even(arr: list) -> bool:
     """
@@ -4511,6 +4807,7 @@ def is_product_even(arr: list) -> bool:
         if i % 2 == 0:
             return True
     return False
+
 
 def check_char(string: str) -> str:
     """
@@ -4528,6 +4825,7 @@ def check_char(string: str) -> str:
     else:
         return "Invalid"
 
+
 def check_str(string):
     """
     Check if the given string starts with a vowel using regex.
@@ -4539,9 +4837,10 @@ def check_str(string):
         bool: True if the string starts with a vowel, False otherwise.
     """
     # Define the regex pattern for a string starting with a vowel
-    pattern = r'^[aeiouAEIOU]'
+    pattern = r"^[aeiouAEIOU]"
     # Use re.match to check the pattern
     return bool(re.match(pattern, string))
+
 
 def is_sublist(main_list: list, sub_list: list) -> bool:
     """
@@ -4555,17 +4854,18 @@ def is_sublist(main_list: list, sub_list: list) -> bool:
         bool: True if sub_list is a sublist of main_list, False otherwise.
     """
     # Placeholder for the solution
-        # Handle edge cases
+    # Handle edge cases
     if not sub_list:
         return True  # An empty list is always a sublist
     if len(sub_list) > len(main_list):
         return False  # If sub_list is longer than main_list, it's impossible to be a sublist
-    
+
     # Iterate through main_list and check for a matching subsequence
     for i in range(len(main_list) - len(sub_list) + 1):
-        if main_list[i:i + len(sub_list)] == sub_list:
+        if main_list[i : i + len(sub_list)] == sub_list:
             return True
     return False
+
 
 def find_substring(strings: list[str], substring: str) -> bool:
     """
@@ -4583,6 +4883,7 @@ def find_substring(strings: list[str], substring: str) -> bool:
         if substring in i:
             return True
     return False
+
 
 def check_smaller(test_tup1: tuple, test_tup2: tuple) -> bool:
     """
@@ -4603,6 +4904,7 @@ def check_smaller(test_tup1: tuple, test_tup2: tuple) -> bool:
             return False
     return True
 
+
 def check_type(test_tuple: tuple) -> bool:
     """
     Check if all elements in the tuple have the same data type.
@@ -4622,6 +4924,7 @@ def check_type(test_tuple: tuple) -> bool:
             return False
     return True
 
+
 def is_undulating(n: int) -> bool:
     """
     Check if the given number is undulating.
@@ -4634,19 +4937,20 @@ def is_undulating(n: int) -> bool:
     """
     # Convert the number to a string for easier manipulation
     n = str(n)
-    
+
     # If the number has fewer than two digits, it's not undulating
     if len(n) < 2:
         return False
-    
+
     # Check if the number alternates between two different digits
     for i in range(1, len(n)):
         if n[i] == n[i - 1]:  # If two consecutive digits are the same
             return False
-    
+
     # Check if the pattern alternates between exactly two distinct digits
     distinct_digits = set(n)
     return len(distinct_digits) == 2
+
 
 def is_woodall(n: int) -> bool:
     """
@@ -4668,6 +4972,7 @@ def is_woodall(n: int) -> bool:
         a += 1
     return False
 
+
 def common_element(list1: list, list2: list) -> bool:
     """
     Check if two lists have at least one common element.
@@ -4681,6 +4986,7 @@ def common_element(list1: list, list2: list) -> bool:
     """
     # Placeholder for the solution
     return bool([x for x in list1 if x in list2])
+
 
 def common_in_nested_lists(nestedlist: list[list[int]]) -> list[int]:
     """
@@ -4705,6 +5011,7 @@ def common_in_nested_lists(nestedlist: list[list[int]]) -> list[int]:
     # Return the common elements as a sorted list
     return list(common_elements)
 
+
 def concatenate_tuple(elements: tuple) -> str:
     """
     Concatenate elements of a tuple into a single string separated by a hyphen.
@@ -4718,6 +5025,7 @@ def concatenate_tuple(elements: tuple) -> str:
     # Implement the function logic here
     return "".join([(str(x) + "-") for x in elements]).strip("-")
 
+
 def volume_of_cone(radius: float, height: float) -> float:
     """
     Calculate the volume of a cone given its radius and height.
@@ -4730,7 +5038,8 @@ def volume_of_cone(radius: float, height: float) -> float:
         float: The volume of the cone.
     """
     # Placeholder for the solution
-    return ((1/3) * math.pi * pow(radius, 2) * height)
+    return (1 / 3) * math.pi * pow(radius, 2) * height
+
 
 def pair_wise(lst: list) -> list[tuple]:
     """
@@ -4750,6 +5059,7 @@ def pair_wise(lst: list) -> list[tuple]:
     # Placeholder for implementation
     return result
 
+
 def convert_to_polar(complex_number: complex) -> tuple:
     """
     Convert a complex number to its polar coordinates.
@@ -4762,6 +5072,7 @@ def convert_to_polar(complex_number: complex) -> tuple:
     """
     # Use cmath.polar to compute the polar coordinates
     return cmath.polar(complex_number)
+
 
 def change_date_format(dt: str) -> str:
     """
@@ -4777,6 +5088,7 @@ def change_date_format(dt: str) -> str:
     arr = dt.split("-")
     return "".join([arr[2], "-", arr[1], "-", arr[0]])
 
+
 def convert_to_floats(data: list[list]) -> list[list]:
     """
     Convert all convertible elements in a list of lists to floats.
@@ -4789,7 +5101,7 @@ def convert_to_floats(data: list[list]) -> list[list]:
     """
     # Initialize the result list
     result = []
-    
+
     # Iterate through each sublist
     for sublist in data:
         # Process each element in the sublist
@@ -4801,11 +5113,12 @@ def convert_to_floats(data: list[list]) -> list[list]:
             except ValueError:
                 # If the element cannot be converted, append it as is
                 converted_sublist.append(element)
-        
+
         # Append the processed sublist to the result
         result.append(converted_sublist)
-    
+
     return result
+
 
 def convert_list_dictionary(l1: list, l2: list, l3: list) -> list[dict]:
     """
@@ -4821,15 +5134,16 @@ def convert_list_dictionary(l1: list, l2: list, l3: list) -> list[dict]:
     """
     # Implement the function logic here
     result = []
-    
+
     # Iterate through each element of l1 to form the outer dictionary
     for i in range(len(l1)):
         outer_dict = {l1[i]: {}}
         # The inner dictionary will have a key from l2[i] and a corresponding value from l3[i]
         outer_dict[l1[i]][l2[i]] = l3[i]
         result.append(outer_dict)
-    
+
     return result
+
 
 def tuple_str_to_int(tuple_str: str) -> tuple:
     """
@@ -4843,6 +5157,7 @@ def tuple_str_to_int(tuple_str: str) -> tuple:
     """
     # Write your code here
     return tuple([int(x.strip()) for x in tuple_str.strip("()").split(",")])
+
 
 def count_inversions(arr):
     """
@@ -4866,6 +5181,7 @@ def count_inversions(arr):
 
     return inversion_count
 
+
 def is_sorted(arr: list) -> bool:
     """
     Check if the list is sorted in ascending order.
@@ -4878,6 +5194,7 @@ def is_sorted(arr: list) -> bool:
     """
     return all(arr[i] <= arr[i + 1] for i in range(len(arr) - 1))
 
+
 def count_rotations(arr: list) -> int:
     """
     Determine the number of rotations required to sort the array.
@@ -4889,7 +5206,7 @@ def count_rotations(arr: list) -> int:
         int: The number of rotations required to sort the array.
     """
     n = len(arr)
-    
+
     # Edge case: if the array is empty or has only one element, no rotation is needed
     if n == 0:
         return 0
@@ -4897,13 +5214,14 @@ def count_rotations(arr: list) -> int:
     # If the array is already sorted, no rotation is needed
     if is_sorted(arr):
         return 0
-    
+
     # Now, perform a linear search to find the point where the sorted order is broken
     for i in range(1, n):
         if arr[i] < arr[i - 1]:
             return i
 
     return 0
+
 
 def count_char_position(input_string: str) -> int:
     """
@@ -4925,16 +5243,17 @@ def count_char_position(input_string: str) -> int:
         char = char.lower()
 
         # Only check alphabetic characters
-        if 'a' <= char <= 'z':
+        if "a" <= char <= "z":
             # Calculate the position of the character in the alphabet
-            alphabet_position = ord(char) - ord('a') + 1
-            
+            alphabet_position = ord(char) - ord("a") + 1
+
             # Compare the alphabet position with the 1-based index of the string
             if alphabet_position == i + 1:
                 count += 1
 
     # Return the final count
     return count
+
 
 def count_vowel_neighbors(s: str) -> int:
     """
@@ -4947,27 +5266,28 @@ def count_vowel_neighbors(s: str) -> int:
         int: The count of characters with vowels as neighbors.
     """
     # Define the set of vowels (case insensitive)
-    vowels = {'a', 'e', 'i', 'o', 'u'}
-    
+    vowels = {"a", "e", "i", "o", "u"}
+
     # Initialize count to 0
     count = 0
-    #Edge case of array must have 2 letters
+    # Edge case of array must have 2 letters
     if len(s) < 2:
         return 0
-    #check first
+    # check first
 
     if s[0] not in vowels and s[1] in vowels:
         count += 1
-    #check last
+    # check last
     if s[-1] not in vowels and s[-2] in vowels:
         count += 1
-    
+
     # Iterate through the string to check neighbors
     for i in range(1, len(s) - 1):
-        if s[i] not in vowels and (s[i-1] in vowels or s[i+1] in vowels):
+        if s[i] not in vowels and (s[i - 1] in vowels or s[i + 1] in vowels):
             count += 1
 
     return count
+
 
 def count_divisors(n: int) -> int:
     """
@@ -4981,6 +5301,7 @@ def count_divisors(n: int) -> int:
     """
     # Placeholder for the solution
     return len(get_divisors(n))
+
 
 def count_element_frequency(lst: list) -> dict:
     """
@@ -4999,6 +5320,7 @@ def count_element_frequency(lst: list) -> dict:
         else:
             frequency[element] = 1
     return frequency
+
 
 def count_first_elements(test_tup: tuple) -> int:
     """
@@ -5019,6 +5341,7 @@ def count_first_elements(test_tup: tuple) -> int:
         count += 1
     return len(test_tup)  # Return count if no tuple is found
 
+
 def count_occurrences(tup: tuple, lst: list) -> int:
     """
     Count the occurrences of elements from the list in the tuple.
@@ -5031,6 +5354,7 @@ def count_occurrences(tup: tuple, lst: list) -> int:
     int: The total count of elements from the list found in the tuple.
     """
     return len([x for x in tup if x in lst])
+
 
 def count_samepair(list1: list, list2: list, list3: list) -> int:
     """
@@ -5053,6 +5377,7 @@ def count_samepair(list1: list, list2: list, list3: list) -> int:
     # Placeholder for the solution
     return result
 
+
 def count_list_occurrences(list_of_lists: list) -> dict:
     """
     Count the occurrences of each sublist in the input list of lists.
@@ -5073,6 +5398,7 @@ def count_list_occurrences(list_of_lists: list) -> dict:
         result[sublist_tuple] = result.get(sublist_tuple, 0) + 1
     # Return the resulting dictionary
     return result
+
 
 def count_lists_in_tuple(input_tuple: tuple) -> int:
     """
@@ -5095,6 +5421,7 @@ def count_lists_in_tuple(input_tuple: tuple) -> int:
     # Return the count of lists
     return list_count
 
+
 def count_same_pair(*lists) -> int:
     """
     Count the number of items that are identical and in the same position across multiple lists.
@@ -5109,14 +5436,15 @@ def count_same_pair(*lists) -> int:
     result = 0
     # Check the length of the shortest list to avoid IndexError
     min_len = min(len(lst) for lst in lists)
-    
+
     # Iterate through the lists and compare items
     for i in range(min_len):
         # Compare the i-th item of all lists
         if all(lst[i] == lists[0][i] for lst in lists):
             result += 1
-    
+
     return result
+
 
 def number_of_substrings(s: str) -> int:
     """
@@ -5130,7 +5458,8 @@ def number_of_substrings(s: str) -> int:
     """
     # Placeholder for the solution
     n = len(s)
-    return ((n * (n + 1)) / 2)
+    return (n * (n + 1)) / 2
+
 
 def count_odd_binary_rotations(binary_string: str, rotations: int) -> int:
     """
@@ -5146,14 +5475,15 @@ def count_odd_binary_rotations(binary_string: str, rotations: int) -> int:
     # Initialize the count of odd numbers
     count = 0
     n = len(binary_string)
-    
+
     # Loop over the number of rotations and check each rotated string
     for i in range(rotations):
-        rotated = binary_string[i % n:] + binary_string[:i % n]  # Perform rotation
-        if rotated[-1] == '1':  # Check if the last bit is 1 (odd binary number)
+        rotated = binary_string[i % n :] + binary_string[: i % n]  # Perform rotation
+        if rotated[-1] == "1":  # Check if the last bit is 1 (odd binary number)
             count += 1
-    
+
     return count
+
 
 def count_odd_xor_pairs(arr: list) -> int:
     """
@@ -5168,10 +5498,11 @@ def count_odd_xor_pairs(arr: list) -> int:
     # Placeholder for the solution
     count = 0
     for i in range(len(arr) - 1):
-        for j in range(i+1, len(arr)):
+        for j in range(i + 1, len(arr)):
             if (arr[i] ^ arr[j]) % 2 == 1:
                 count += 1
     return count
+
 
 def get_pairs_count(arr: list, target_sum: int) -> int:
     """
@@ -5188,10 +5519,11 @@ def get_pairs_count(arr: list, target_sum: int) -> int:
     count = 0
     # Placeholder for the solution
     for i in range(len(arr) - 1):
-        for j in range(i+1, len(arr)):
+        for j in range(i + 1, len(arr)):
             if arr[i] + arr[j] == target_sum:
                 count += 1
     return count
+
 
 def count_primes(n: int) -> int:
     """
@@ -5212,6 +5544,7 @@ def count_primes(n: int) -> int:
         i += 1
     return count
 
+
 def count_set_bits(n: int) -> int:
     """
     Count the number of set bits (1s) in the binary representation of a number.
@@ -5222,7 +5555,8 @@ def count_set_bits(n: int) -> int:
     Returns:
         int: The count of set bits in the binary representation of n.
     """
-    return len([x for x in str(bin(n)) if x == '1'])
+    return len([x for x in str(bin(n)) if x == "1"])
+
 
 def count_element_in_list(list1: list[list], x: any) -> int:
     """
@@ -5246,6 +5580,7 @@ def count_element_in_list(list1: list[list], x: any) -> int:
     # Return the final count
     return count
 
+
 def count_unequal_pairs(lst: list[int]) -> int:
     """
     Count the number of unordered pairs (i, j) where i < j and lst[i] != lst[j].
@@ -5260,11 +5595,12 @@ def count_unequal_pairs(lst: list[int]) -> int:
     count = 0
     # Implement the logic to count the pairs
     for i in range(len(lst) - 1):
-        for j in range(i+1, len(lst)):
+        for j in range(i + 1, len(lst)):
             if lst[i] != lst[j]:
                 count += 1
     # Placeholder for the solution
     return count
+
 
 def find_even_pair(A: list) -> int:
     """
@@ -5281,10 +5617,11 @@ def find_even_pair(A: list) -> int:
     # Iterate through all pairs in the list
     for i in range(len(A) - 1):
         for j in range(i + 1, len(A)):
-            if ((A[i] ^ A[j]) % 2 == 0):
+            if (A[i] ^ A[j]) % 2 == 0:
                 count += 1
     # Return the count of such pairs
     return count
+
 
 def cube_sum_of_evens(n: int) -> int:
     """
@@ -5299,9 +5636,10 @@ def cube_sum_of_evens(n: int) -> int:
     # Initialize the sum
     total = 0
     # Loop through the first n even numbers
-    for i in range(2, (n*2) + 1, 2):
+    for i in range(2, (n * 2) + 1, 2):
         total += pow(i, 3)
     return total
+
 
 def cumulative_sum(tuple_list: list[tuple]) -> int:
     """
@@ -5321,6 +5659,7 @@ def cumulative_sum(tuple_list: list[tuple]) -> int:
         total_sum += sum(tpl)
     return total_sum
 
+
 def surface_area_cylinder(radius: float, height: float) -> float:
     """
     Calculate the surface area of a cylinder.
@@ -5333,7 +5672,8 @@ def surface_area_cylinder(radius: float, height: float) -> float:
         float: The surface area of the cylinder.
     """
     # Placeholder for the solution
-    return ((2 * math.pi * pow(radius, 2)) + (2 * math.pi * radius * height))
+    return (2 * math.pi * pow(radius, 2)) + (2 * math.pi * radius * height)
+
 
 def filter_even_values(dictionary: dict) -> dict:
     """
@@ -5347,6 +5687,7 @@ def filter_even_values(dictionary: dict) -> dict:
     """
     return {key: value for key, value in dictionary.items() if value % 2 == 0}
 
+
 def square_dict_values(dictionary: dict) -> dict:
     """
     Creates a new dictionary where the values are the squares of the original values.
@@ -5358,6 +5699,7 @@ def square_dict_values(dictionary: dict) -> dict:
     dict: A new dictionary with the squared values.
     """
     return {key: pow(value, 2) for key, value in dictionary.items()}
+
 
 def dict_depth(d: dict) -> int:
     """
@@ -5371,21 +5713,25 @@ def dict_depth(d: dict) -> int:
     """
     if not isinstance(d, dict) or not d:
         return 1
-    
+
     max_depth = 1
     for value in d.values():
         if isinstance(value, dict):
             # Recursively calculate the depth of the nested dictionary
             max_depth = max(max_depth, dict_depth(value) + 1)
-    
+
     return max_depth
+
 
 def isOdd(n: int) -> bool:
     return n % 2 == 1
+
+
 def isEven(n: int) -> bool:
     return n % 2 == 0
 
-def diff_even_odd(numbers: list) -> int|None:
+
+def diff_even_odd(numbers: list) -> int | None:
     """
     Calculate the difference between the first even and first odd number in the list.
 
@@ -5405,8 +5751,9 @@ def diff_even_odd(numbers: list) -> int|None:
         elif isEven(i) and first_even == None:
             first_even = i
         if first_even and first_odd:
-            return (first_even - first_odd)
+            return first_even - first_odd
     return None
+
 
 def can_be_difference_of_squares(n: int) -> bool:
     """
@@ -5427,6 +5774,7 @@ def can_be_difference_of_squares(n: int) -> bool:
         k += 1
     return True
 
+
 def validate(n: int) -> bool:
     """
     Check whether the frequency of each digit in the integer is less than or equal to the digit itself.
@@ -5438,6 +5786,8 @@ def validate(n: int) -> bool:
         bool: True if the condition is met, False otherwise.
     """
     # Convert the integer to its absolute value to handle negatives
+
+
 def validate(n: int) -> bool:
     """
     Check whether the frequency of each digit in the integer is less than or equal to the digit itself.
@@ -5451,23 +5801,24 @@ def validate(n: int) -> bool:
     # Edge case: If n is 0, return True since 0 appears once, and it satisfies the condition
     if n == 0:
         return True
-    
+
     # Convert the integer to its absolute value to handle negatives
     n = abs(n)
-    
+
     # Convert the integer to a string to easily process each digit
     str_n = str(n)
-    
+
     # Count the frequency of each digit in the string representation
     digit_count = Counter(str_n)
-    
+
     # Check if the frequency of each digit is less than or equal to the digit itself
     for digit, count in digit_count.items():
         if count > int(digit):  # If frequency exceeds the digit's value
             return False
-    
+
     # If all digits satisfy the condition
     return True
+
 
 def divisible_by_digits(startnum: int, endnum: int) -> list:
     """
@@ -5484,19 +5835,22 @@ def divisible_by_digits(startnum: int, endnum: int) -> list:
     for i in range(startnum, endnum + 1):  # Include endnum, so use endnum + 1
         num_str = str(i)
         divisible = True
-        
+
         # Check each digit in the number
         for digit in num_str:
             digit_int = int(digit)
-            if digit_int != 0 and i % digit_int != 0:  # If it's non-zero and not divisible
+            if (
+                digit_int != 0 and i % digit_int != 0
+            ):  # If it's non-zero and not divisible
                 divisible = False
                 break
-        
+
         # Exclude numbers with zero digits, they should not be included
-        if divisible and '0' not in num_str:
+        if divisible and "0" not in num_str:
             value.append(i)
-    
+
     return value
+
 
 def freq_count(elements: list) -> dict:
     """
@@ -5509,6 +5863,7 @@ def freq_count(elements: list) -> dict:
         Dict: A dictionary with elements as keys and their frequencies as values.
     """
     return dict(Counter(elements))
+
 
 def element_search(arr: list, element: any) -> tuple:
     """
@@ -5526,6 +5881,7 @@ def element_search(arr: list, element: any) -> tuple:
         if arr[i] == element:
             return (True, i)
     return (False, -1)
+
 
 def div_list(nums1: list, nums2: list) -> list:
     """
@@ -5545,15 +5901,17 @@ def div_list(nums1: list, nums2: list) -> list:
     # Check if the lists have the same length
     if len(nums1) != len(nums2):
         raise ValueError("Input lists must have the same length.")
-    
+
     # Perform element-wise division and handle division by zero
     result = []
     for n1, n2 in zip(nums1, nums2):
         if n2 == 0:
             raise ZeroDivisionError("Division by zero is not allowed.")
         result.append(n1 / n2)
-    
+
     return result
+
+
 def division_elements(tuple1: tuple, tuple2: tuple) -> tuple:
     """
     Perform element-wise integer division on two tuples.
@@ -5567,7 +5925,8 @@ def division_elements(tuple1: tuple, tuple2: tuple) -> tuple:
     """
     # Perform element-wise integer division
     # Replace the following line with your implementation
-    return tuple(x/y for x, y in zip(tuple1, tuple2))
+    return tuple(x / y for x, y in zip(tuple1, tuple2))
+
 
 def and_tuples(test_tup1: tuple, test_tup2: tuple) -> tuple:
     """
@@ -5581,7 +5940,8 @@ def and_tuples(test_tup1: tuple, test_tup2: tuple) -> tuple:
     tuple: A tuple containing the result of the bitwise AND operation.
     """
     # Placeholder for the solution
-    return tuple(x&y for x, y in zip(test_tup1, test_tup2))
+    return tuple(x & y for x, y in zip(test_tup1, test_tup2))
+
 
 def sub_list(nums1: list, nums2: list) -> list:
     """
@@ -5594,4 +5954,4 @@ def sub_list(nums1: list, nums2: list) -> list:
     Returns:
         list: A list containing the element-wise subtraction of nums2 from nums1.
     """
-    return [x-y for x, y in zip(nums1, nums2)]
+    return [x - y for x, y in zip(nums1, nums2)]

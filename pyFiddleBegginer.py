@@ -1,5 +1,6 @@
 from imports import *
 
+
 def add_tuple(test_list: list, test_tup: tuple) -> list:
     """
     Appends the elements of a tuple to a list and returns the resulting list.
@@ -17,17 +18,19 @@ def add_tuple(test_list: list, test_tup: tuple) -> list:
         results.append(i)
     return results
 
+
 def ascii_value(char: str) -> int:
     """
     Returns the ACII value of the given character
-    
+
     Args:
         char (str): A single character
-    
+
     Returns:
         int: the ASCII value of the charater
     """
     return ord(char)
+
 
 def loss_amount(actual_cost: float, sale_amount: float) -> float:
     """
@@ -45,6 +48,7 @@ def loss_amount(actual_cost: float, sale_amount: float) -> float:
         return sale_amount - actual_cost
     return 0
 
+
 def is_30_day_month(month_number: int) -> bool:
     """
     Determine if the given month number corresponds to a month with 30 days.
@@ -57,7 +61,8 @@ def is_30_day_month(month_number: int) -> bool:
     """
     # Implement the logic to check if the month has 30 days
     days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-    return (days[month_number-1] == 30)
+    return days[month_number - 1] == 30
+
 
 def all_characters_same(s: str) -> bool:
     """
@@ -78,6 +83,7 @@ def all_characters_same(s: str) -> bool:
             return False
     return True
 
+
 def check_tuplex(tuplex: tuple, element: any) -> bool:
     """
     Check if an element exists within a tuple.
@@ -91,6 +97,7 @@ def check_tuplex(tuplex: tuple, element: any) -> bool:
     """
     # Implement the function logic here
     return element in tuplex
+
 
 def are_all_dicts_empty(dict_list: list[dict]) -> bool:
     """
@@ -106,7 +113,8 @@ def are_all_dicts_empty(dict_list: list[dict]) -> bool:
     for i in dict_list:
         if i != {}:
             return False
-    return True 
+    return True
+
 
 def is_even(n: int) -> bool:
     """
@@ -134,6 +142,7 @@ def is_dict_empty(input_dict: dict) -> bool:
     # Write your code here
     return input_dict == {}
 
+
 def is_sorted(lst):
     """
     Check if the given list is sorted in ascending order.
@@ -148,6 +157,7 @@ def is_sorted(lst):
         if lst[i] > lst[i + 1]:
             return False
     return True
+
 
 def check_element(lst: list, element: any) -> bool:
     """
@@ -166,6 +176,7 @@ def check_element(lst: list, element: any) -> bool:
             return False
     return True
 
+
 def has_31_days(month_number: int) -> bool:
     """
     Determine if the given month has 31 days.
@@ -178,6 +189,7 @@ def has_31_days(month_number: int) -> bool:
     """
     days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     return days[month_number - 1] == 31
+
 
 def noprofit_noloss(actual_cost: int, sale_amount: int) -> bool:
     """
@@ -192,6 +204,7 @@ def noprofit_noloss(actual_cost: int, sale_amount: int) -> bool:
     """
     # Compare actual_cost and sale_amount
     return actual_cost == sale_amount
+
 
 def unique_element(arr: list) -> bool:
     """
@@ -212,6 +225,7 @@ def unique_element(arr: list) -> bool:
             return False
     return True
 
+
 def check_distinct(test_tup: tuple) -> bool:
     """
     Check if the given tuple contains no duplicate elements.
@@ -231,14 +245,15 @@ def check_distinct(test_tup: tuple) -> bool:
             return False
     return True
 
-def check_func(test_tup: tuple, k: any = None) -> bool:  
+
+def check_func(test_tup: tuple, k: any = None) -> bool:
     """
     Supporting function for Check_none and check_k
-    
+
     Args:
         test_tup (tuple): The tuple to check
         k (any): Default None, value to fund in test_tup
-        
+
     Returns:
         bool: True if K in test_tup, else False
     """
@@ -258,8 +273,9 @@ def check_none(test_tup: tuple) -> bool:
     Returns:
         bool: True if any element is None, False otherwise.
     """
-    #return bool([x for x in test_tup if x == None])
+    # return bool([x for x in test_tup if x == None])
     return check_func(test_tup, None)
+
 
 def check_k(test_tup: tuple, k: any) -> bool:
     """
@@ -275,6 +291,7 @@ def check_k(test_tup: tuple, k: any) -> bool:
     # Placeholder for the solution
     return check_func(test_tup, k)
 
+
 def all_unique(test_list: list) -> bool:
     """
     Check if all elements in the list are unique.
@@ -287,6 +304,7 @@ def all_unique(test_list: list) -> bool:
     """
     # Placeholder for the solution
     return check_distinct(tuple(test_list))
+
 
 def is_word_length_odd(word: str) -> bool:
     """
@@ -301,6 +319,7 @@ def is_word_length_odd(word: str) -> bool:
     # Implement the logic to check if the length of the word is odd
     return len(word) % 2 == 1
 
+
 def circle_circumference(r: float) -> float:
     """
     Calculate the circumference of a circle given its radius.
@@ -312,7 +331,8 @@ def circle_circumference(r: float) -> float:
         float: The circumference of the circle.
     """
     # Replace the following line with your implementation
-    return (2 * math.pi * r)
+    return 2 * math.pi * r
+
 
 def closest_smaller_number(n: int) -> int:
     """
@@ -325,7 +345,8 @@ def closest_smaller_number(n: int) -> int:
     int: The closest smaller number than n.
     """
     # Placeholder for the solution
-    return (n-1)
+    return n - 1
+
 
 def degrees_to_radians(degrees: float) -> float:
     """
@@ -338,7 +359,8 @@ def degrees_to_radians(degrees: float) -> float:
         float: The angle in radians.
     """
     # Implement the conversion formula here
-    return (degrees * (math.pi / 180))
+    return degrees * (math.pi / 180)
+
 
 def list_to_tuple(input_list: list) -> tuple:
     """
@@ -353,6 +375,7 @@ def list_to_tuple(input_list: list) -> tuple:
     # Replace the following line with your implementation
     return tuple(input_list)
 
+
 def convert_to_lowercase(input_string: str) -> str:
     """
     Convert the given string to lowercase.
@@ -365,6 +388,7 @@ def convert_to_lowercase(input_string: str) -> str:
     """
     # Your code here
     return input_string.lower()
+
 
 def convert_to_uppercase(input_string: str) -> str:
     """
@@ -379,6 +403,7 @@ def convert_to_uppercase(input_string: str) -> str:
     # Replace the following line with your implementation
     return input_string.upper()
 
+
 def count_characters(input_string: str) -> int:
     """
     Count the total number of characters in the given string.
@@ -390,6 +415,7 @@ def count_characters(input_string: str) -> int:
         int: The total number of characters in the string.
     """
     return len(input_string)
+
 
 def count_digits(input_string: str) -> int:
     """
@@ -412,6 +438,7 @@ def count_digits(input_string: str) -> int:
     # Return the total count of digits
     return digit_count
 
+
 def count_occurrences(tup: tuple, element: any) -> int:
     """
     Count the occurrences of an element in a tuple.
@@ -424,6 +451,7 @@ def count_occurrences(tup: tuple, element: any) -> int:
     int: The number of times the element appears in the tuple.
     """
     return len([x for x in tup if x == element])
+
 
 def count_equal_numbers(a: int, b: int, c: int) -> int:
     """
@@ -439,12 +467,17 @@ def count_equal_numbers(a: int, b: int, c: int) -> int:
     """
     # Implement the logic to count equal numbers
     count = 0
-    if a == b: count += 1
-    if a == c: count += 1
-    if b == c: count += 1
-    #adjust for offset
-    if count == 1: count += 1
+    if a == b:
+        count += 1
+    if a == c:
+        count += 1
+    if b == c:
+        count += 1
+    # adjust for offset
+    if count == 1:
+        count += 1
     return count
+
 
 def count_integer_elements(lst: list) -> int:
     """
@@ -456,7 +489,7 @@ def count_integer_elements(lst: list) -> int:
     Returns:
         int: The count of integer elements in the list.
     """
-    #return len([x for x in lst if type(x) == int])
+    # return len([x for x in lst if type(x) == int])
     # Initialize a counter to zero
     count = 0
     # Iterate through the list and check each element
@@ -466,6 +499,7 @@ def count_integer_elements(lst: list) -> int:
             count += 1
     # Return the final count
     return count
+
 
 def count_nested_lists(input_list: list) -> int:
     """
@@ -488,6 +522,7 @@ def count_nested_lists(input_list: list) -> int:
     # Return the count
     return count
 
+
 def frequency(lst: list[int], num: int) -> int:
     """
     Count the number of occurrences of `num` in the list `lst`.
@@ -502,6 +537,7 @@ def frequency(lst: list[int], num: int) -> int:
     # Initialize a counter variable
     return len([x for x in lst if x == num])
 
+
 def count_odd_numbers(numbers: list[int]) -> int:
     """
     Counts the number of odd numbers in a given list.
@@ -512,8 +548,9 @@ def count_odd_numbers(numbers: list[int]) -> int:
     Returns:
         int: The count of odd numbers in the list.
     """
-    isOdd = lambda x: x%2 == 1
+    isOdd = lambda x: x % 2 == 1
     return len([x for x in numbers if isOdd(x)])
+
 
 def count_positive_numbers(numbers: list[int]) -> int:
     """
@@ -527,6 +564,7 @@ def count_positive_numbers(numbers: list[int]) -> int:
     """
     return len([x for x in numbers if x > 0])
 
+
 def count_occurrences(s: str) -> int:
     """
     Count the number of occurrences of the substring 'std' in the given string.
@@ -538,6 +576,7 @@ def count_occurrences(s: str) -> int:
         int: The count of 'std' occurrences.
     """
     return len(re.findall("std", s))
+
 
 def count_true_booleans(lst: list) -> int:
     """
@@ -551,6 +590,7 @@ def count_true_booleans(lst: list) -> int:
     """
     # Placeholder for the solution
     return len([x for x in lst if x])
+
 
 def count_uppercase(s: str) -> int:
     """
@@ -573,6 +613,7 @@ def count_uppercase(s: str) -> int:
     # Return the final count
     return count
 
+
 def count_vowels(string: str) -> int:
     """
     Counts the number of vowels in a given string.
@@ -585,6 +626,7 @@ def count_vowels(string: str) -> int:
     """
     vowels = r"[AEIOUaeiou]"
     return len(re.findall(vowels, string))
+
 
 def new_tuple(test_list: list[str], test_str: str) -> tuple:
     """
@@ -599,9 +641,10 @@ def new_tuple(test_list: list[str], test_str: str) -> tuple:
     """
     # Add test_str to the list
     test_list.append(test_str)
-    
+
     # Convert the list to a tuple and return
     return tuple(test_list)
+
 
 def volume_cube(side: float) -> float:
     """
@@ -616,6 +659,7 @@ def volume_cube(side: float) -> float:
     # Placeholder for the solution
     return round(pow(side, 3), 3)
 
+
 def volume_cylinder(radius: float, height: float) -> float:
     """
     Calculate the volume of a cylinder given its radius and height.
@@ -628,7 +672,8 @@ def volume_cylinder(radius: float, height: float) -> float:
         float: The volume of the cylinder.
     """
     # Placeholder for the solution
-    return (math.pi * pow(radius, 2) * height)
+    return math.pi * pow(radius, 2) * height
+
 
 def decimal_to_binary(n: int) -> str:
     """
@@ -641,8 +686,10 @@ def decimal_to_binary(n: int) -> str:
     str: The binary representation of the number without leading zeros.
     """
     # Replace the following line with your implementation
-    if n == 0: return "0"
+    if n == 0:
+        return "0"
     return str(bin(n)).lstrip("0b")
+
 
 def big_diff(nums: list[int]) -> int:
     """
@@ -656,9 +703,12 @@ def big_diff(nums: list[int]) -> int:
     """
     largest = smallest = nums[0]
     for i in nums[1:]:
-        if i > largest: largest = i
-        elif i < smallest: smallest = i
+        if i > largest:
+            largest = i
+        elif i < smallest:
+            smallest = i
     return largest - smallest
+
 
 def is_divisible_by_11(n: int) -> bool:
     """
@@ -673,6 +723,7 @@ def is_divisible_by_11(n: int) -> bool:
     # Placeholder for the solution
     return n % 11 == 0
 
+
 def divisible_numbers(numbers: list[int]) -> str:
     """
     Returns a comma-separated sequence of numbers that are divisible by 3 but not a multiple of 7.
@@ -684,6 +735,7 @@ def divisible_numbers(numbers: list[int]) -> str:
     str: The comma-separated sequence of numbers.
     """
     return ",".join([str(x) for x in numbers if (x % 3 == 0 and x % 7 != 0)])
+
 
 def dog_age(human_years: int) -> float:
     """
@@ -702,7 +754,8 @@ def dog_age(human_years: int) -> float:
         return 10.5 + dog_age(human_years - 1)
     else:
         return 4 + dog_age(human_years - 1)
-    
+
+
 def drop(n: int, seq: list) -> list:
     """
     Returns a list containing the elements of seq with the first n elements dropped.
@@ -716,6 +769,7 @@ def drop(n: int, seq: list) -> list:
     """
     return seq[n:]
 
+
 def drop_empty(input_dict: dict) -> dict:
     """
     Removes key-value pairs from the dictionary where the value is None.
@@ -728,6 +782,7 @@ def drop_empty(input_dict: dict) -> dict:
     """
     # Implement the function logic here
     return {Key: Value for Key, Value in input_dict.items() if Value is not None}
+
 
 def check_voting_eligibility(age: int) -> str:
     """
@@ -743,7 +798,8 @@ def check_voting_eligibility(age: int) -> str:
         return "Eligible to vote"
     else:
         return "Not eligible to vote"
-    
+
+
 def exclude_first_last_items(lst: list) -> list:
     """
     Returns a new list that contains all elements of the original list except for the first and last items.
@@ -755,6 +811,7 @@ def exclude_first_last_items(lst: list) -> list:
     list: The new list with excluded first and last items.
     """
     return lst[1:-1]
+
 
 def extract_first_elements(lst: list[list]) -> list:
     """
@@ -769,6 +826,7 @@ def extract_first_elements(lst: list[list]) -> list:
     # Write your code here
     return [x[0] for x in lst]
 
+
 def rear_extract(tuples_list: list[tuple]) -> list:
     """
     Extract the last element from each tuple in the list.
@@ -782,6 +840,7 @@ def rear_extract(tuples_list: list[tuple]) -> list:
     # Placeholder for the solution
     return [x[-1] for x in tuples_list]
 
+
 def filter_negatives(numbers: list[int]) -> list:
     """
     Filters and returns the negative numbers from the input list.
@@ -793,6 +852,7 @@ def filter_negatives(numbers: list[int]) -> list:
         list: A list containing only the negative integers from the input list.
     """
     return [x for x in numbers if x < 0]
+
 
 def filter_odds(numbers: list) -> list:
     """
@@ -808,6 +868,7 @@ def filter_odds(numbers: list) -> list:
     isOdd = lambda x: x % 2 == 1
     return [x for x in numbers if isOdd(x)]
 
+
 def filter_odd_numbers(nums: list[int]) -> list:
     """
     Filters the odd numbers from a list of integers.
@@ -819,6 +880,7 @@ def filter_odd_numbers(nums: list[int]) -> list:
         list: A list containing only the odd integers from the input list.
     """
     return list(filter(lambda x: x % 2 == 1, nums))
+
 
 def cube_nums(nums: list[int]) -> list[int]:
     """
@@ -833,6 +895,7 @@ def cube_nums(nums: list[int]) -> list[int]:
     # Replace the following line with your implementation
     return [pow(x, 3) for x in nums]
 
+
 def find_even_numbers(numbers: list[int]) -> list[int]:
     """
     This function takes a list of integers and returns a list of even numbers.
@@ -845,6 +908,7 @@ def find_even_numbers(numbers: list[int]) -> list[int]:
     """
     # Placeholder for the solution
     return list(filter(lambda x: x % 2 == 0, numbers))
+
 
 def first_digit(n: int) -> int:
     """
@@ -859,6 +923,7 @@ def first_digit(n: int) -> int:
     # Placeholder for the solution
     return int(str(abs(n))[0])
 
+
 def last_digit(n: int) -> int:
     """
     Returns the last digit of the given integer n.
@@ -872,7 +937,8 @@ def last_digit(n: int) -> int:
     # Your code here
     return int(str(abs(n))[-1])
 
-def smallest_num(xs: list[int|float]) -> int|float:
+
+def smallest_num(xs: list[int | float]) -> int | float:
     """
     Find the smallest number in a list.
 
@@ -884,8 +950,10 @@ def smallest_num(xs: list[int|float]) -> int|float:
     """
     smallest = xs[0]
     for i in xs[1:]:
-        if i < smallest: smallest = i
+        if i < smallest:
+            smallest = i
     return smallest
+
 
 def generate_dictionary(n: int) -> dict:
     """
@@ -898,9 +966,10 @@ def generate_dictionary(n: int) -> dict:
     dict: The generated dictionary.
     """
     value = {}
-    for i in range(1, n+1):
+    for i in range(1, n + 1):
         value.update({i: pow(i, 2)})
     return value
+
 
 def create_empty_dicts(n: int) -> list[dict]:
     """
@@ -914,6 +983,7 @@ def create_empty_dicts(n: int) -> list[dict]:
     """
     # Your code here
     return [{}] * n
+
 
 def find_quotient(n: int, m: int) -> int:
     """
@@ -929,6 +999,7 @@ def find_quotient(n: int, m: int) -> int:
     # Implement the function using integer division
     return n // m
 
+
 def lateral_surface_area(l: float) -> float:
     """
     Calculate the lateral surface area of a cube given its side length.
@@ -940,9 +1011,10 @@ def lateral_surface_area(l: float) -> float:
         float: The lateral surface area of the cube.
     """
     # Replace the following line with the correct implementation
-    return (4 * pow(l, 2))
+    return 4 * pow(l, 2)
 
-def multiply_list(numbers: list[int|float]) -> list[int|float]:
+
+def multiply_list(numbers: list[int | float]) -> list[int | float]:
     """
     Multiplies each element in the given list by 2.
 
@@ -952,7 +1024,8 @@ def multiply_list(numbers: list[int|float]) -> list[int|float]:
     Returns:
         list: A new list with each element multiplied by 2.
     """
-    return [(x*2) for x in numbers]
+    return [(x * 2) for x in numbers]
+
 
 def order_list(strings: str) -> list[str]:
     """
@@ -966,7 +1039,8 @@ def order_list(strings: str) -> list[str]:
     """
     return sorted(strings, reverse=True)
 
-def maximum(a: int|float, b: int|float) -> int|float:
+
+def maximum(a: int | float, b: int | float) -> int | float:
     """
     Returns the maximum of two numbers.
 
@@ -978,6 +1052,7 @@ def maximum(a: int|float, b: int|float) -> int|float:
     int or float: The larger of the two numbers.
     """
     return max(a, b)
+
 
 def median_trapezium(base1: float, base2: float) -> float:
     """
@@ -992,7 +1067,8 @@ def median_trapezium(base1: float, base2: float) -> float:
     """
     # Calculate the median length
     # Replace the following line with your implementation
-    return ((base1 + base2) / 2)
+    return (base1 + base2) / 2
+
 
 def median_of_three(a: float, b: float, c: float) -> float:
     """
@@ -1009,7 +1085,8 @@ def median_of_three(a: float, b: float, c: float) -> float:
     # Implement the logic to find the median of three numbers
     return (sorted([a, b, c]))[1]
 
-def min_of_three(a: int|float, b: int|float, c: int|float) -> int|float:
+
+def min_of_three(a: int | float, b: int | float, c: int | float) -> int | float:
     """
     Returns the smallest of three numbers.
 
@@ -1024,7 +1101,8 @@ def min_of_three(a: int|float, b: int|float, c: int|float) -> int|float:
     # Placeholder for the solution
     return min([a, b, c])
 
-def minimum(a: int|float, b: int|float) -> int|float:
+
+def minimum(a: int | float, b: int | float) -> int | float:
     """
     Returns the smaller of two numbers.
 
@@ -1038,6 +1116,7 @@ def minimum(a: int|float, b: int|float) -> int|float:
     # Write your code here
     return min(a, b)
 
+
 def classify_number(number: int) -> str:
     """
     Classifies the given number as positive, negative, or zero.
@@ -1048,9 +1127,13 @@ def classify_number(number: int) -> str:
     Returns:
         str: A string indicating the classification of the number.
     """
-    if number > 0: return "Positive"
-    elif number < 0: return "Negative"
-    elif number == 0: return "Zero"
+    if number > 0:
+        return "Positive"
+    elif number < 0:
+        return "Negative"
+    elif number == 0:
+        return "Zero"
+
 
 def perimeter_pentagon(side_length: float) -> float:
     """
@@ -1065,6 +1148,7 @@ def perimeter_pentagon(side_length: float) -> float:
     # Placeholder for the solution
     return 5 * side_length
 
+
 def rectangle_area(length: int, breadth: int) -> int:
     """
     Calculate the area of a rectangle given its length and breadth.
@@ -1077,6 +1161,7 @@ def rectangle_area(length: int, breadth: int) -> int:
         int: The area of the rectangle.
     """
     return length * breadth
+
 
 def remove_odd_characters(input_string: str) -> str:
     """
@@ -1091,6 +1176,7 @@ def remove_odd_characters(input_string: str) -> str:
     # Placeholder for the solution
     return "".join(x for x in input_string[::2])
 
+
 def remove_odd(numbers: list[int]) -> list[int]:
     """
     Removes all odd numbers from the input list and returns a new list.
@@ -1102,6 +1188,7 @@ def remove_odd(numbers: list[int]) -> list[int]:
         list: A new list with all odd numbers removed.
     """
     return [x for x in numbers if x % 2 == 0]
+
 
 def remove_whitespaces(text: str) -> str:
     """
@@ -1116,6 +1203,7 @@ def remove_whitespaces(text: str) -> str:
     # Replace the following line with your implementation
     return text.replace(" ", "")
 
+
 def replace_blank(input_string: str, replacement_char: str) -> str:
     """
     Replace all blank spaces in the input string with the specified replacement character.
@@ -1129,7 +1217,10 @@ def replace_blank(input_string: str, replacement_char: str) -> str:
     """
     return input_string.replace(" ", replacement_char)
 
-def replace_characters(input_string: str, target_char: str, replacement_char: str) -> str:
+
+def replace_characters(
+    input_string: str, target_char: str, replacement_char: str
+) -> str:
     """
     Replace all occurrences of target_char in input_string with replacement_char.
 
@@ -1143,6 +1234,7 @@ def replace_characters(input_string: str, target_char: str, replacement_char: st
     """
     # Your code here
     return input_string.replace(target_char, replacement_char)
+
 
 def replace_last_element(list1: list, list2: list) -> list:
     """
@@ -1158,6 +1250,7 @@ def replace_last_element(list1: list, list2: list) -> list:
     # Replace the last element of list1 with the elements of list2
     return list1[:-1] + list2
 
+
 def replace_spaces(string: str) -> str:
     """
     Replace all spaces in the given string with '%20'.
@@ -1171,6 +1264,7 @@ def replace_spaces(string: str) -> str:
     replacement = "%20"
     return string.replace(" ", replacement)
 
+
 def surface_area_of_sphere(radius: float) -> float:
     """
     Calculate the surface area of a sphere given its radius.
@@ -1182,7 +1276,8 @@ def surface_area_of_sphere(radius: float) -> float:
         float: The surface area of the sphere.
     """
     # Implement the formula for the surface area of a sphere
-    return (4 * math.pi * pow(radius, 2))
+    return 4 * math.pi * pow(radius, 2)
+
 
 def volume_of_sphere(radius: float) -> float:
     """
@@ -1194,7 +1289,8 @@ def volume_of_sphere(radius: float) -> float:
     Returns:
         float: The volume of the sphere.
     """
-    return (4/3) * math.pi * radius**3
+    return (4 / 3) * math.pi * radius**3
+
 
 def split_two_parts(input_list: list, L: int) -> tuple:
     """
@@ -1212,6 +1308,7 @@ def split_two_parts(input_list: list, L: int) -> tuple:
         return ([], input_list)
     return (input_list[:L], input_list[L:])
 
+
 def generate_list(values: str) -> list:
     """
     Generates a list containing each number from a sequence of comma-separated numbers.
@@ -1222,8 +1319,10 @@ def generate_list(values: str) -> list:
     Returns:
     list: The generated list.
     """
-    if len(values) == 0: return []
+    if len(values) == 0:
+        return []
     return values.split(",")
+
 
 def split_string(word: str) -> list:
     """
@@ -1238,6 +1337,7 @@ def split_string(word: str) -> list:
     # Replace the following line with your implementation
     return list(word)
 
+
 def square_nums(nums: list[int]) -> list[int]:
     """
     Given a list of integers, return a new list containing the squares of each element.
@@ -1251,6 +1351,7 @@ def square_nums(nums: list[int]) -> list[int]:
     # Placeholder for the solution
     return [pow(x, 2) for x in nums]
 
+
 def square_perimeter(side_length: float) -> float:
     """
     Calculate the perimeter of a square given its side length.
@@ -1262,7 +1363,8 @@ def square_perimeter(side_length: float) -> float:
         float: The perimeter of the square.
     """
     # Replace the following line with your implementation
-    return 4* side_length
+    return 4 * side_length
+
 
 def reverse_string(string: str) -> str:
     """
@@ -1276,6 +1378,7 @@ def reverse_string(string: str) -> str:
     """
     return string[::-1]
 
+
 def string_to_list(string: str) -> list[str]:
     """
     Convert a string to a list of strings split on the space character.
@@ -1287,6 +1390,7 @@ def string_to_list(string: str) -> list[str]:
         list: A list of strings split from the input string.
     """
     return string.split(" ")
+
 
 def string_to_tuple(input_string: str) -> tuple:
     """
@@ -1300,6 +1404,7 @@ def string_to_tuple(input_string: str) -> tuple:
     """
     return tuple(input_string[::1])
 
+
 def sum_and_average(n: int) -> tuple:
     """
     Calculate the sum and average of the first n natural numbers.
@@ -1310,8 +1415,9 @@ def sum_and_average(n: int) -> tuple:
     Returns:
         tuple: A tuple containing the sum and the average.
     """
-    val = sum([x for x in range(1, n+1)])
-    return (val, val/n)
+    val = sum([x for x in range(1, n + 1)])
+    return (val, val / n)
+
 
 def sum_lists(lst1: list, lst2: list) -> list:
     """
@@ -1328,6 +1434,7 @@ def sum_lists(lst1: list, lst2: list) -> list:
     # Implement the summation logic
     return [x + y for x, y in zip(lst1, lst2)]
 
+
 def return_sum(input_dict: dict) -> int:
     """
     Calculate the sum of all values in the given dictionary.
@@ -1339,6 +1446,7 @@ def return_sum(input_dict: dict) -> int:
         int: The sum of all values in the dictionary.
     """
     return sum(input_dict.values())
+
 
 def big_sum(nums: list) -> int:
     """
@@ -1354,6 +1462,7 @@ def big_sum(nums: list) -> int:
     nums.sort()
     return nums[0] + nums[-1]
 
+
 def sum_negative_numbers(nums: list[int]) -> int:
     """
     Calculate the sum of all negative numbers in the given list.
@@ -1365,6 +1474,7 @@ def sum_negative_numbers(nums: list[int]) -> int:
         int: The sum of all negative numbers in the list.
     """
     return sum([x for x in nums if x < 0])
+
 
 def sum_of_array(arr: list) -> int:
     """
@@ -1378,6 +1488,7 @@ def sum_of_array(arr: list) -> int:
     """
     return sum(arr)
 
+
 def surface_area_of_cube(side_length: int) -> int:
     """
     Calculate the surface area of a cube given the side length.
@@ -1389,6 +1500,7 @@ def surface_area_of_cube(side_length: int) -> int:
     int: The surface area of the cube.
     """
     return 6 * side_length**2
+
 
 def swap_first_last(lst):
     """
@@ -1409,7 +1521,8 @@ def swap_first_last(lst):
 
     return lst
 
-def swap_numbers(a: int|float, b: int|float) -> tuple:
+
+def swap_numbers(a: int | float, b: int | float) -> tuple:
     """
     Swap the positions of two numbers and return them as a tuple.
 
@@ -1421,6 +1534,7 @@ def swap_numbers(a: int|float, b: int|float) -> tuple:
         tuple: A tuple with the second number first and the first number second.
     """
     return (b, a)
+
 
 def take(n: int, seq: list) -> list:
     """
@@ -1435,6 +1549,7 @@ def take(n: int, seq: list) -> list:
     """
     return seq[:n]
 
+
 def toggle_case(string):
     """
     Toggle the case of all characters in the input string.
@@ -1446,7 +1561,8 @@ def toggle_case(string):
         str: A new string with toggled case for each character.
     """
     return string.swapcase()
-            
+
+
 def find_volume(base_length: float, base_height: float, prism_height: float) -> float:
     """
     Calculate the volume of a triangular prism.
@@ -1461,6 +1577,7 @@ def find_volume(base_length: float, base_height: float, prism_height: float) -> 
     """
     return 0.5 * base_length * base_height * prism_height
 
+
 def tuple_size(input_tuple: tuple) -> int:
     """
     Calculate the size in bytes of the given tuple.
@@ -1472,6 +1589,7 @@ def tuple_size(input_tuple: tuple) -> int:
         int: The size of the tuple in bytes.
     """
     return sys.getsizeof(input_tuple)
+
 
 def tuple_to_string(tup: tuple) -> str:
     """
